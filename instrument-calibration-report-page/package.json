@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.8.1",
+    "bulma-checkradio": "^1.1.1",
     "core-js": "^3.6.4",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
