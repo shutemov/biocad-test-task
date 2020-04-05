@@ -39,7 +39,7 @@
 
 
         <!--        user        -->
-        <td>12</td>
+        <td>{{mockData.user}}</td>
     </tr>
 </template>
 
@@ -64,24 +64,20 @@
                     ],
                     slope: 98.1,
                     offset: -0.3,
-                    User: 'Петров Иван Геннадьевич'
+                    user: 'Петров Иван Геннадьевич'
                 }
             }
         },
 
         computed: {
             getSlopeState() {
-                if (this.mockData.slope <= 100 && this.mockData.slope >= 95) {
-                    return true
-                }
-                return false
+                let slope = this.mockData.slope
+                return slope <= 100 && slope >= 95;
             },
 
             getOffsetState() {
-                if (this.mockData.offset >= -20 && this.mockData.offset <= 20) {
-                    return true
-                }
-                return false
+                let offset = this.mockData.offset
+                return offset >= -20 && offset <= 20;
             }
         }
     }
@@ -89,9 +85,11 @@
 </script>
 
 <style scoped>
+
     tr > td {
         font-size: 13px;
-        line-height: 15px;
+        line-height: 18px;
+        padding: 20px 20px 10px 20px;
     }
 
     tr > th {
@@ -99,5 +97,6 @@
         line-height: 19px;
         font-style: normal;
         font-weight: normal;
+        padding: 20px 20px 10px 0px;
     }
 </style>
