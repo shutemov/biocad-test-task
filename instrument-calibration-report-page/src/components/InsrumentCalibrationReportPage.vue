@@ -1,14 +1,17 @@
 <template>
-    <div id="main-container">
+    <div class="container" id="main-container">
 
         <!--       HEAD BLOCK        -->
-        <filter-devices></filter-devices>
+        <div class="columns" style="border: 1px dashed red;">
+            <div class="column" style="border: 1px dashed gray;">
+                <filter-devices></filter-devices>
+            </div>
+        </div>
 
         <!--        BODY  BLOCK      -->
-        <div id="body-block">
-
+        <div class="columns " style="border: 1px dashed green;">
             <!--            LEFT SIDE              -->
-            <div style="border: 1px solid red;">
+            <div class="column is-two-fifths" style="border: 3px dashed green;">
 
                 <!--        UNIT NAME     -->
                 <unit-name></unit-name>
@@ -18,27 +21,37 @@
 
                 <!--  GENERATE REPORT BUTTON  -->
                 <button class="button is-info" style="margin-top: 30px;">Generate report</button>
+
             </div>
 
             <!--            RIGHT SIDE             -->
-            <device-info></device-info>
-
+            <div class="column" style="border: 1px dashed green;">
+                <device-info></device-info>
+            </div>
         </div>
 
+        <!--        FOOTER BLOCK      -->
+        <div class="columns" style="border: 1px dashed green;margin-top: 10px;">
+            <div class="column" style="border: 1px dashed green;">
+                <report-app></report-app>
+            </div>
+        </div>
 
     </div>
 </template>
 
 <script>
-    import filterDevices from '@/components/FilterDevices'
-    import unitName from '@/components/UnitName'
-    import reportFilters from '@/components/ReportFilters'
-    import deviceInfo from '@/components/DeviceInfo'
+    import filterDevices from '@/components/header/FilterDevices'
+    import unitName from '@/components/body/UnitName'
+    import reportFilters from '@/components/body/ReportFilters'
+    import deviceInfo from '@/components/body/DeviceInfo'
+    import reportApp from '@/components/footer/Report'
+
 
     export default {
         name: 'InsrumentCalibrationReportPage',
         components: {
-            filterDevices, unitName, reportFilters, deviceInfo
+            filterDevices, unitName, reportFilters, deviceInfo, reportApp,
         },
         props: {
             msg: String
@@ -58,10 +71,10 @@
 
     #body-block {
         display: flex;
-        flex-direction: row;
+        flex-flow: wrap row;
         border: 1px solid;
         width: auto;
-        height: 330px;
+        /*height: 330px;*/
         margin-top: 30px;
         margin-left: 50px;
     }
