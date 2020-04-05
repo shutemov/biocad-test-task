@@ -42,10 +42,10 @@
     }
 
     #body-block-device-info {
-        border: 1px solid;
-        margin-left: 30px;
-        width: 550px;
-        height: 330px;
+        /*border: 1px solid;*/
+        /*margin-left: 30px;*/
+        /*width: 550px;*/
+        height: auto;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
