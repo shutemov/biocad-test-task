@@ -36,11 +36,15 @@
         </svg>
 
 
-        <div style="margin-left: 20.26px;width: 225px;height:80px;border:1px solid;" id="device-title">
+        <div style="margin-left: 20.26px;width: 225px;height:80px;" id="device-title">
             Аналитические весы OHAUS Adventurer АХ324 (B715976163)
         </div>
 
-        <div>3</div>
+        <div >
+            <span class="icon has-tooltip-right" data-tooltip="Some information..." style="font-size: 22px;">
+                <i class="fas fa-info-circle"></i>
+            </span>
+        </div>
     </div>
 </template>
 
@@ -57,7 +61,7 @@
         align-items: flex-start;
         width: 320px;
         height: 80px;
-        border: 1px solid;
+        /*border: 1px solid;*/
 
     }
 
