@@ -2,16 +2,16 @@
     <div class="container" id="main-container">
 
         <!--       HEAD BLOCK        -->
-        <div class="columns" style="border: 1px dashed red;">
-            <div class="column" style="border: 1px dashed gray;">
+        <div class="columns">
+            <div class="column">
                 <filter-devices></filter-devices>
             </div>
         </div>
 
         <!--        BODY  BLOCK      -->
-        <div class="columns " style="border: 1px dashed green;">
+        <div class="columns ">
             <!--            LEFT SIDE              -->
-            <div class="column is-two-fifths" style="border: 3px dashed green;">
+            <div class="column is-two-fifths">
 
                 <!--        UNIT NAME     -->
                 <unit-name></unit-name>
@@ -25,14 +25,14 @@
             </div>
 
             <!--            RIGHT SIDE             -->
-            <div class="column" style="border: 1px dashed green;">
-                <device-info></device-info>
+            <div class="column">
+                <device-info :device="getDevice"></device-info>
             </div>
         </div>
 
         <!--        FOOTER BLOCK      -->
-        <div class="columns" style="border: 1px dashed green;margin-top: 10px;">
-            <div class="column" style="border: 1px dashed green;">
+        <div class="columns" style="margin-top: 10px;">
+            <div class="column">
                 <report-app></report-app>
             </div>
         </div>
@@ -46,6 +46,7 @@
     import reportFilters from '@/components/body/ReportFilters'
     import deviceInfo from '@/components/body/DeviceInfo'
     import reportApp from '@/components/footer/Report'
+    import {mapGetters} from "vuex";
 
 
     export default {
@@ -55,6 +56,21 @@
         },
         props: {
             msg: String
+        },
+
+        data() {
+            return {
+
+            }
+        },
+
+        computed: {
+            ...mapGetters(['getFoundDevice']),
+
+            getDevice(){
+                return this.getFoundDevice
+            }
+
         }
     }
 </script>
@@ -72,7 +88,7 @@
     #body-block {
         display: flex;
         flex-flow: wrap row;
-        border: 1px solid;
+        /*border: 1px solid;*/
         width: auto;
         /*height: 330px;*/
         margin-top: 30px;
