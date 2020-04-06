@@ -6,22 +6,52 @@
 
         <div class="field" id="filter-devices-input">
             <div class="control">
-                <input class="input is-small" type="text" placeholder="Normal input">
+                <input class="input is-small" type="text" placeholder="Input one of IDs..." v-model="deviceId">
             </div>
-            <button class="button is-dark">Search</button>
+            <button class="button is-dark" @click="search(deviceId)">Search</button>
+            <h1 class="button is-dark">{{check}}</h1>
         </div>
     </div>
 </template>
 
 <script>
+    import {mapActions, mapGetters} from "vuex";
+    import {SEARCH_DEVICE_ITEM_BY_ID} from "@/store/actions";
+
     export default {
-        name: "FilterDevices"
+        name: "FilterDevices",
+
+
+        data() {
+            return {
+                deviceId: undefined,
+            }
+        },
+
+
+        computed: {
+            ...mapGetters(['getFoundDevice']),
+            check() {
+                return this.getFoundDevice
+            }
+        },
+
+
+        methods: {
+            ...mapActions([SEARCH_DEVICE_ITEM_BY_ID]),
+
+            search(deviceId) {
+                console.log('[method] search', deviceId)
+                this[SEARCH_DEVICE_ITEM_BY_ID](deviceId)
+            }
+        }
+
     }
 </script>
 
 <style scoped>
     #filter-devices {
-        border: 1px solid;
+        /*border: 1px solid;*/
         width: 320px;
         height: 90px;
         /*margin-top: 30px;*/
