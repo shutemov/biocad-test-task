@@ -41,7 +41,7 @@
         </div>
 
         <div >
-            <span class="icon has-tooltip-right" data-tooltip="Some information..." style="font-size: 22px;">
+            <span class="icon has-tooltip-right" data-tooltip="You can copy the code clicked on it" style="font-size: 22px;">
                 <i class="fas fa-info-circle"></i>
             </span>
         </div>
