@@ -1,0 +1,2 @@
+//app.js
+export const SEARCH_DEVICE_ITEM_BY_ID = 'SEARCH_DEVICE_ITEM_BY_ID'
