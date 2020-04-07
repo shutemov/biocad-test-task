@@ -1,8 +1,10 @@
-import {SEARCH_DEVICE_ITEM_BY_ID} from '../actions'
+import {SEARCH_DEVICE_BY_ID} from '../actions'
 import {SET_FOUND_DEVICE, SET_REPORT_TYPE} from "@/store/mutations";
 
 
 const state = {
+
+    //Mock devices
     devices: [
         {
             id: 0,
@@ -32,12 +34,13 @@ const state = {
             MOL: 'Петров Иван Генадьевич',
             territory: 'г.Санкт-Петербург(Нойдорф)',
             serialNumber: 'B715976163',
-            GUID: '508b2a71-662e-4983-ae0c-3cb0c1cd21c51',
-            bimsID: '49db8db1-585f-4b9e-bbf0-8a59698edc8b1',
-            tam: 'А-0012341',
+            GUID: '0000-0000-0000-0000-0000',
+            bimsID: '1111-1111-1111-1111-1111',
+            tam: 'А-0000000',
         }
     ],
 
+    // Mock calibration type data
     calibrationCase: {
 
         headReportTableData: [
@@ -86,8 +89,15 @@ const state = {
 
     },
 
+    // Mock unit name component data
+    unitName: {
+        title: 'Аналитические весы OHAUS Adventurer АХ324 (B715976163)'
+    },
+
+    // Value is assigned by mutation [SET_FOUND_DEVICE]
     foundDevice: undefined,
 
+    // Value is assigned by mutation [SET_REPORT_TYPE]
     reportType: undefined
 
 }
@@ -102,6 +112,8 @@ const getters = {
 
     getBodyReportTableData: state => state.calibrationCase.bodyReportTableData,
 
+    getUnitNameData: state => state.unitName.title,
+
 }
 
 const actions = {
@@ -109,7 +121,7 @@ const actions = {
     /*
     * SEARCH DEVICE IN DB BY 'GUID', 'BimsID', 'Tam'
     */
-    [SEARCH_DEVICE_ITEM_BY_ID]({commit, state}, deviceId) {
+    [SEARCH_DEVICE_BY_ID]({commit, state}, deviceId) {
 
         const deviceCandidate = state.devices.find(device => {
             return device.GUID === deviceId || device.bimsID === deviceId || device.tam === deviceId;
