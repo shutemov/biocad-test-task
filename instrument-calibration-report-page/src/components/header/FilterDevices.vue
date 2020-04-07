@@ -42,6 +42,7 @@
             search(deviceId) {
                 console.log('[method] search', deviceId)
                 this[SEARCH_DEVICE_BY_ID](deviceId)
+                this.deviceId = ""
             }
         }
 
