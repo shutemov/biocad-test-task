@@ -55,17 +55,22 @@
     import reportFilters from '@/components/body/ReportFilters'
     import deviceInfo from '@/components/body/DeviceInfo'
     import reportApp from '@/components/footer/Report'
+    import reportTable from '@/components/footer/ReportTable'
     import {mapGetters} from "vuex";
 
 
     export default {
         name: 'InsrumentCalibrationReportPage',
+
+
         components: {
             filterDevices, unitName, reportFilters, deviceInfo, reportApp,
         },
         props: {
             msg: String
+            filterDevices, unitName, reportFilters, deviceInfo, reportTable,
         },
+
 
         data() {
             return {
@@ -109,6 +114,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+<style>
 
     .main-container {
         width: auto;
