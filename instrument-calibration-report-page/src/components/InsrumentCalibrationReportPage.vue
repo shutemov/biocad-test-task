@@ -1,43 +1,52 @@
 <template>
-    <div class="container" id="main-container">
+    <div class="main-container">
 
-        <!--       HEAD BLOCK        -->
-        <div class="columns">
-            <div class="column">
-                <filter-devices></filter-devices>
+        <!--  HEAD BLOCK  -->
+        <div class="head">
+            <div class="content">
+                <filter-devices class="filter-devices"></filter-devices>
             </div>
         </div>
 
-        <!--        BODY  BLOCK      -->
-        <div class="columns ">
-            <!--            LEFT SIDE              -->
-            <div class="column is-two-fifths">
+        <!--  BODY  BLOCK   -->
+        <div class="body">
 
-                <!--        UNIT NAME     -->
-                <unit-name></unit-name>
+            <!--   LEFT SIDE   -->
+            <div class="left-side ">
 
-                <!--        REPORT FILTER     -->
-                <report-filters></report-filters>
+                <div class="left-side__content">
+
+                    <!--  UNIT NAME  -->
+                    <unit-name :title="this.unitNameTitle"></unit-name>
+
+                    <!--  REPORT FILTER  -->
+                    <report-filters class="report-filter"></report-filters>
+
+                </div>
 
                 <!--  GENERATE REPORT BUTTON  -->
-                <button class="button is-info" style="margin-top: 30px;">Generate report</button>
+                <button class="generate-button" @click="generate">
+                    Generate report
+                </button>
 
             </div>
 
-            <!--            RIGHT SIDE             -->
-            <div class="column">
-                <device-info :device="getDevice"></device-info>
+            <!--  RIGHT SIDE  -->
+            <div class="right-side">
+                <device-info class="device-info" :device="getDevice"></device-info>
             </div>
+
         </div>
 
-        <!--        FOOTER BLOCK      -->
-        <div class="columns" style="margin-top: 10px;">
-            <div class="column">
-                <report-app></report-app>
-            </div>
+        <!--        FOOTER BLOCK-->
+        <div class="footer-block">
+            <report-table
+                    :title="reportTable.reportType"
+                    :t-head="reportTable.tHeadReportTableData"
+                    :t-body="reportTable.tBodyReportTableData"/>
         </div>
-
     </div>
+
 </template>
 
 <script>
@@ -78,21 +87,73 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-
-    #main-container {
-        display: flex;
-        flex-direction: column;
+    .main-container {
+        width: auto;
+        padding-left: 50px;
     }
 
-
-    #body-block {
-        display: flex;
-        flex-flow: wrap row;
-        /*border: 1px solid;*/
-        width: auto;
-        /*height: 330px;*/
+    .main-container > .head, .body {
         margin-top: 30px;
-        margin-left: 50px;
+    }
+
+    .head {
+        width: 390px;
+        height: 90px;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .left-side {
+        display: flex;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .left-side__content {
+    }
+
+    .report-filter {
+        margin-top: 30px;
+    }
+
+    .generate-button {
+        /*form*/
+        width: 180px;
+        height: 40px;
+        background: #4990E2;
+        border-radius: 3px;
+        border: none;
+
+        /*font*/
+        color: white;
+        font-family: "TT Norms Regular";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+    }
+
+    .right-side {
+        /*form*/
+        margin-left: 30px;
+    }
+
+    .device-info {
+        /*form*/
+        padding: 20px 18px 20px 18px;
+        height: 330px;
+    }
+
+    .footer-block {
+        margin-top: 50px;
     }
 
 
