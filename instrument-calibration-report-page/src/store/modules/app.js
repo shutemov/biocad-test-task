@@ -1,6 +1,5 @@
 import {SEARCH_DEVICE_ITEM_BY_ID} from '../actions'
-import {SET_FOUND_DEVICE} from "@/store/mutations";
-// import {SET_FOUND_DEVICE} from '../mutations'
+import {SET_FOUND_DEVICE, SET_REPORT_TYPE} from "@/store/mutations";
 
 
 const state = {
@@ -30,7 +29,7 @@ const state = {
             model: 'AX-123',
             responsibleUnit: 'Группа обслуживания лабораторного оборудования',
             operationalUnit: 'Химико-аналитическая лаборатория 2.0',
-            MOL: 'Иванов1 Иван1 Иванович1',
+            MOL: 'Петров Иван Генадьевич',
             territory: 'г.Санкт-Петербург(Нойдорф)',
             serialNumber: 'B715976163',
             GUID: '508b2a71-662e-4983-ae0c-3cb0c1cd21c51',
@@ -39,20 +38,79 @@ const state = {
         }
     ],
 
+    calibrationCase: {
+
+        headReportTableData: [
+            'Data',
+            'Used Buffer Solution',
+            'Slope, % <br> Norm 95-100',
+            'Offset, mV <br> Norm ± (0-20)',
+            'User',
+        ],
+
+        bodyReportTableData: [
+            {
+                when: {
+                    date: '04.10.19',
+                    time: '10:23'
+                },
+                usedBufferSolution: [
+                    'В1: № 2000460789536: pH 1.09',
+                    'В2: № 2000460789536: pH 2.00',
+                    'В3: № 2000460789536: pH 4.01',
+                    'В4: № 2000460789536: pH 7.00',
+                    'В5: № 2000460789536: pH 9.21',
+                    'В5: № 2000460789536: pH 9.21',
+                ],
+                slope: 98.1,
+                offset: -0.3,
+                user: 'Петров Иван Геннадьевич'
+            },
+            {
+                when: {
+                    date: '04.10.19',
+                    time: '10:23'
+                },
+                usedBufferSolution: [
+                    'В1: № 2000460789536: pH 1.09',
+                    'В2: № 2000460789536: pH 2.00',
+                    'В3: № 2000460789536: pH 4.01',
+                    'В4: № 2000460789536: pH 7.00',
+                    'В5: № 2000460789536: pH 9.21',
+                ],
+                slope: 96,
+                offset: -20.3,
+                user: 'Иванов Геннадий Петрович'
+            },
+        ]
+
+    },
 
     foundDevice: undefined,
+
+    reportType: undefined
 
 }
 
 const getters = {
 
-    getFoundDevice: state => state.foundDevice
+    getFoundDevice: state => state.foundDevice,
+
+    getReportType: state => state.reportType,
+
+    getHeadReportTableData: state => state.calibrationCase.headReportTableData,
+
+    getBodyReportTableData: state => state.calibrationCase.bodyReportTableData,
 
 }
 
 const actions = {
 
+    /*
+    * SEARCH DEVICE IN DB BY 'GUID', 'BimsID', 'Tam'
+    */
     [SEARCH_DEVICE_ITEM_BY_ID]({commit, state}, deviceId) {
+
         const deviceCandidate = state.devices.find(device => {
             return device.GUID === deviceId || device.bimsID === deviceId || device.tam === deviceId;
         })
@@ -64,8 +122,19 @@ const actions = {
 }
 
 const mutations = {
+
+    /*
+    * SET DEVICE IF HE FOUND IN DB
+    */
     [SET_FOUND_DEVICE](state, device) {
         state.foundDevice = device
+    },
+
+    /*
+    * SET SELECTED REPORT TYPE
+    */
+    [SET_REPORT_TYPE](state, reportType) {
+        state.reportType = reportType
     }
 }
 
