@@ -6,7 +6,7 @@
 
             <!--  CAPTION  -->
             <caption class="report-table__caption">
-                <b>{{title}} report</b>
+                <b>{{title}}</b>
             </caption>
 
 
@@ -46,7 +46,10 @@
             //Caption of the ReportTable
             title: {
                 type: String,
-                required: true
+                required: true,
+                default:function () {
+                    return 'Calibration report'
+                }
             },
 
             //Titles columns ReportTable
@@ -127,7 +130,7 @@
     table > tbody > tr:last-child {
         border-bottom: none;
     }
-    
+
     caption {
         /*font*/
         text-align: left;
