@@ -86,6 +86,19 @@
             }
         },
 
+        created() {
+
+            // Get initional state for table
+
+            this.reportTable.reportType = this.$store.getters.getReportType
+            this.reportTable.tHeadReportTableData = this.getTableHeadData
+            this.reportTable.tBodyReportTableData = this.getTableBodyData
+
+            // Get initional state for UnitName
+            this.unitNameTitle = this.$store.getters.getUnitNameData
+
+        },
+
         computed: {
             ...mapGetters(['getFoundDevice']),
 
