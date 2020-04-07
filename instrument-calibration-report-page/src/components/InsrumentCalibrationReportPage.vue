@@ -80,6 +80,21 @@
                 return this.getFoundDevice
             }
 
+        methods: {
+
+            ...mapGetters(['getReportType']),
+
+            generate() {
+                let reportType = this.getReportType()
+
+                if (!reportType) {
+                    alert('Choose report type option')
+                    return
+                }
+
+                //set the selected item for generation report
+                this.reportType = this.getReportType()
+            }
         }
     }
 </script>
