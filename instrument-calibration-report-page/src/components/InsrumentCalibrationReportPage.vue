@@ -139,10 +139,19 @@
         padding-left: 50px;
     }
 
+    /*margin of global elements*/
+
     .main-container > .head, .body {
         margin-top: 30px;
     }
 
+    .footer-block {
+        /*form*/
+        margin-top: 50px;
+    }
+
+    /*---*/
+    
     .head {
         width: 390px;
         height: 90px;
@@ -156,13 +165,8 @@
 
     .left-side {
         display: flex;
-        width: auto;
-        height: auto;
         flex-direction: column;
         justify-content: space-between;
-    }
-
-    .left-side__content {
     }
 
     .report-filter {
@@ -197,10 +201,6 @@
         /*form*/
         padding: 20px 18px 20px 18px;
         height: 330px;
-    }
-
-    .footer-block {
-        margin-top: 50px;
     }
 
 
