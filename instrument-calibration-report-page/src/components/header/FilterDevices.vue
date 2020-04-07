@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters} from "vuex";
+    import {mapActions} from "vuex";
     import {SEARCH_DEVICE_BY_ID} from "@/store/actions";
 
     export default {
@@ -24,15 +24,6 @@
         data() {
             return {
                 deviceId: undefined,
-            }
-        },
-
-
-        computed: {
-            ...mapGetters(['getFoundDevice']),
-
-            check() {
-                return this.getFoundDevice
             }
         },
 
