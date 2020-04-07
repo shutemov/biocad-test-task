@@ -36,12 +36,12 @@
         </svg>
 
 
-        <div style="margin-left: 20.26px;width: 225px;height:80px;" id="device-title">
-            Аналитические весы OHAUS Adventurer АХ324 (B715976163)
+        <div class="device-title" style="margin-left: 20.26px;width: 225px;height:80px;">
+            {{this.title}}
         </div>
 
-        <div >
-            <span class="icon has-tooltip-right" data-tooltip="You can copy the blue code of the device just by clicking on it!" style="font-size: 22px;">
+        <div>
+            <span class="icon has-tooltip-right" :data-tooltip="this.tooltipData" style="font-size: 22px;">
                 <i class="fas fa-info-circle"></i>
             </span>
         </div>
@@ -50,7 +50,25 @@
 
 <script>
     export default {
-        name: "UnitName"
+        name: "UnitName",
+
+        props: {
+
+            title: {
+                type: String,
+                default: function () {
+                    return 'You can find unit by ID'
+                }
+            },
+
+            tooltipData: {
+                type: String,
+                default: function () {
+                    return 'You can copy the blue code of the device just by clicking on it!'
+                }
+            },
+
+        }
     }
 </script>
 
@@ -65,7 +83,7 @@
 
     }
 
-    #device-title {
+    .device-title {
 
         /* Title */
         font-style: normal;
