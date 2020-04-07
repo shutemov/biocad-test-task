@@ -54,7 +54,6 @@
     import unitName from '@/components/body/UnitName'
     import reportFilters from '@/components/body/ReportFilters'
     import deviceInfo from '@/components/body/DeviceInfo'
-    import reportApp from '@/components/footer/Report'
     import reportTable from '@/components/footer/ReportTable'
     import {mapGetters} from "vuex";
 
@@ -64,10 +63,6 @@
 
 
         components: {
-            filterDevices, unitName, reportFilters, deviceInfo, reportApp,
-        },
-        props: {
-            msg: String
             filterDevices, unitName, reportFilters, deviceInfo, reportTable,
         },
 
@@ -131,14 +126,12 @@
                 }
 
                 //set the selected item for generation report
-                this.reportType = this.getReportType()
+                this.reportTable.reportType = this.getReportType() + ' report'
             }
         }
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
 <style>
 
     .main-container {
@@ -212,3 +205,4 @@
 
 
 </style>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
