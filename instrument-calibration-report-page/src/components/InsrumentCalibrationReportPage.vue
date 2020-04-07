@@ -69,7 +69,15 @@
 
         data() {
             return {
+                reportTable: {
+                    reportType: undefined,
 
+                    headReportTableData: [],
+
+                    bodyReportTableData: [],
+                },
+
+                unitNameTitle: undefined,
             }
         },
 
