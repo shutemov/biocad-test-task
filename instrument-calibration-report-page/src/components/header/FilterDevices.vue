@@ -1,22 +1,21 @@
 <template>
-    <div id="filter-devices">
+    <div class="filter-devices">
         <div style="text-align: start;">
             <span id="filter-devices-title">Enter inventory number, guid or bims id</span>
         </div>
 
         <div class="field" id="filter-devices-input">
             <div class="control">
-                <input class="input is-small" type="text" placeholder="Input one of IDs..." v-model="deviceId">
+                <input class="input is-small" type="text" placeholder="Input ID" v-model="deviceId">
             </div>
             <button class="button is-dark" @click="search(deviceId)">Search</button>
-            <h1 class="button is-dark">{{check}}</h1>
         </div>
     </div>
 </template>
 
 <script>
     import {mapActions, mapGetters} from "vuex";
-    import {SEARCH_DEVICE_ITEM_BY_ID} from "@/store/actions";
+    import {SEARCH_DEVICE_BY_ID} from "@/store/actions";
 
     export default {
         name: "FilterDevices",
@@ -38,11 +37,11 @@
 
 
         methods: {
-            ...mapActions([SEARCH_DEVICE_ITEM_BY_ID]),
+            ...mapActions([SEARCH_DEVICE_BY_ID]),
 
             search(deviceId) {
                 console.log('[method] search', deviceId)
-                this[SEARCH_DEVICE_ITEM_BY_ID](deviceId)
+                this[SEARCH_DEVICE_BY_ID](deviceId)
             }
         }
 
@@ -50,7 +49,7 @@
 </script>
 
 <style scoped>
-    #filter-devices {
+    .filter-devices {
         /*border: 1px solid;*/
         width: 320px;
         height: 90px;
@@ -80,7 +79,7 @@
     }
 
 
-    #filter-devices button {
+    .filter-devices button {
         width: 90px;
         height: 40px;
         border-radius: 0
