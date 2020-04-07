@@ -4,45 +4,45 @@
         <select class="report-filter__select">
             <option>1 day</option>
             <option selected>1 mounth</option>
-            <option>6 mount</option>
+            <option>6 mounth</option>
             <option>1 year</option>
         </select>
 
 
-        <div class="field" style="display: flex;flex-direction: column;margin-top: 10px;">
+        <div class="report-filter__checkradio" style="display: flex;flex-direction: column;margin-top: 10px;">
 
-            <div class="field">
-                <input class="is-checkradio is-info"
-                       id="input1"
+            <div>
+                <input class=""
+                       id="calibrationRadio"
                        type="radio"
-                       name="exampleRadioNormal"
+                       name="reportTypeRadio"
                        value="Calibration"
                        checked="checked"
                        v-model="reportType"
                        @change="setReportType">
-                <label for="input1">Calibration</label>
+                <label for="calibrationRadio">Calibration</label>
             </div>
 
-            <div class="field">
+            <div>
                 <input class="is-checkradio is-info"
-                       id="input2"
+                       id="measuringRadio"
                        type="radio"
-                       name="exampleRadioNormal"
+                       name="reportTypeRadio"
                        value="Measuring"
                        v-model="reportType"
                        @change="setReportType">
-                <label for="input2">Measuring</label>
+                <label for="measuringRadio">Measuring</label>
             </div>
 
-            <div class="field">
+            <div>
                 <input class="is-checkradio is-info"
-                       id="input3"
+                       id="usingRadio"
                        type="radio"
-                       name="exampleRadioNormal"
+                       name="reportTypeRadio"
                        value="Using"
                        v-model="reportType"
                        @change="setReportType">
-                <label for="input3">Using</label>
+                <label for="usingRadio">Using</label>
             </div>
         </div>
     </div>
