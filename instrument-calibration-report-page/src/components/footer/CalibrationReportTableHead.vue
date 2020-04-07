@@ -1,6 +1,6 @@
 <template>
     <tr>
-        <th v-for="th in this.tHeadData" :key="th" v-html="th">
+        <th v-for="th in this.tHeadData" :key="th.id" v-html="th">
         </th>
     </tr>
 </template>

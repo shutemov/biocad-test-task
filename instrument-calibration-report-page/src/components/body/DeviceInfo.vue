@@ -1,8 +1,8 @@
 <template>
     <div class="notification body-block-device-info" id="body-block-device-info">
         <div class="infoItem"
-             v-for="(itemInfo,index) in updateInfo"
-             :key="'device_'+index">
+             v-for="itemInfo in updateInfo"
+             :key="itemInfo.id">
 
 
             <!--  display the property of the item  -->

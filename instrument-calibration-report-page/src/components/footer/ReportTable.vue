@@ -12,16 +12,16 @@
 
             <!--  TABLE HEAD  -->
             <thead>
-                 <calibration-report-table-head :t-head-data="this.tHead"/>
+            <calibration-report-table-head :t-head-data="this.tHead"/>
             </thead>
 
 
             <!--   TABLE BODY  -->
             <tbody>
-                <calibration-report-table-body-item
-                        v-for="data in this.tBody"
-                        :data="data"
-                        :key="data"/>
+            <calibration-report-table-body-item
+                    v-for="data in this.tBody"
+                    :data="data"
+                    :key="data.id"/>
             </tbody>
         </table>
     </div>
