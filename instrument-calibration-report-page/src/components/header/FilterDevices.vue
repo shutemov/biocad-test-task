@@ -65,7 +65,18 @@
         background: #FFFFFF;
         border: 1px solid #E9E9E9;
         box-sizing: border-box;
+        padding: 0px 12px 0px 12px;
 
+        /*font*/
+        font-family: "TT Norms Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+
+        letter-spacing: 0.16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #353535;
     }
 
     .filter-devices__button {
