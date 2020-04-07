@@ -86,6 +86,7 @@
             }
         },
 
+
         created() {
 
             // Get initional state for table
@@ -100,11 +101,22 @@
         },
 
         computed: {
-            ...mapGetters(['getFoundDevice']),
 
-            getDevice(){
+            ...mapGetters(['getFoundDevice', 'getHeadReportTableData', 'getBodyReportTableData']),
+
+            getDevice() {
                 return this.getFoundDevice
+            },
+
+            getTableHeadData() {
+                return [...this.getHeadReportTableData]
+            },
+
+            getTableBodyData() {
+                return [...this.getBodyReportTableData]
             }
+
+        },
 
         methods: {
 
