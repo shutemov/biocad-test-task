@@ -99,4 +99,72 @@
         color: #353535;
     }
 
+    .report-filter__checkradio > div {
+        /*form*/
+        margin-top: 12px;
+    }
+
+
+    /*custom checkradio*/
+
+    @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+        input[type="radio"] {
+            --active: #fff;
+            --active-inner: #4990E2;
+            --border: #c1c1c1;
+            --border-hover: #275efe;
+            --background: #fff;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 21px;
+            height: 21px;
+            outline: none;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            margin: 0;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            background: var(--background);
+        }
+
+        input[type="radio"]:after {
+            display: block;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background: var(--active-inner);
+            opacity: var(--o, 0);
+            transform: scale(var(--s, 0.7));
+            content: "";
+        }
+
+
+        input[type="radio"]:checked {
+            --o: 1;
+            --s: 0.5;
+        }
+
+        input[type="radio"] + label {
+            /*form*/
+            display: inline-block;
+            margin-left: 4px;
+
+            /*font*/
+            font-size: 14px;
+            vertical-align: top;
+            cursor: pointer;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 20px;
+            letter-spacing: 0.16px;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            color: #353535;
+        }
+
+
+    }
+
+
 </style>
