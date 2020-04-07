@@ -105,7 +105,7 @@
 
     /*Analog line-height*/
     .infoItem {
-        margin-top: 5px;
+        margin-top: 7px;
     }
 
     .infoItem:first-child {
