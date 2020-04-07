@@ -1,23 +1,23 @@
 <template>
-    <div class="section report">
+    <div class="report-table">
 
         <!--  TABLE  -->
-        <table class="table">
+        <table class="report-table__table">
 
             <!--  CAPTION  -->
-            <caption class="title">
+            <caption class="report-table__caption">
                 <b>{{title}} report</b>
             </caption>
 
 
             <!--  TABLE HEAD  -->
-            <thead>
+            <thead class="report-table__thead">
             <calibration-report-table-head :t-head-data="this.tHead"/>
             </thead>
 
 
             <!--   TABLE BODY  -->
-            <tbody>
+            <tbody class="report-table__tbody">
             <calibration-report-table-body-item
                     v-for="data in this.tBody"
                     :data="data"
@@ -115,23 +115,34 @@
     }
 </script>
 
-<style scoped>
+<style>
     table {
         width: 100%;
-        /* white */
     }
 
+    tbody > tr {
+        border-bottom: 1px solid #E9E9E9;
+    }
+
+    table > tbody > tr:last-child {
+        border-bottom: none;
+    }
+    
     caption {
+        /*font*/
         text-align: left;
         font-size: 16px;
         line-height: 19px;
         font-style: normal;
     }
 
-    .report {
-        background: #FFFFFF;
+
+    .report-table {
+        /*form*/
+        padding: 40px;
         overflow: hidden;
         overflow-x: scroll;
+        background: #FFFFFF;
         border: 1px dashed #939DA6;
         box-sizing: border-box;
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);

@@ -1,13 +1,12 @@
 <template>
-    <div id="report-filter">
-        <div class="select">
-            <select style="width: 220px;">
-                <option>1 day</option>
-                <option>1 mounth</option>
-                <option>6 mount</option>
-                <option>1 year</option>
-            </select>
-        </div>
+    <div class="report-filter">
+
+        <select class="report-filter__select">
+            <option>1 day</option>
+            <option selected>1 mounth</option>
+            <option>6 mount</option>
+            <option>1 year</option>
+        </select>
 
 
         <div class="field" style="display: flex;flex-direction: column;margin-top: 10px;">
@@ -77,7 +76,27 @@
 </script>
 
 <style scoped>
-    #report-filter {
-        margin-top: 30px;
+    .report-filter {
+
     }
+
+    .report-filter__select {
+        /*form*/
+        width: 220px;
+        height: 30px;
+        background: #FFFFFF;
+        border: 1px solid #E9E9E9;
+        box-sizing: border-box;
+
+        /*font*/
+        font-family: "TT Norms Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #353535;
+    }
+
 </style>

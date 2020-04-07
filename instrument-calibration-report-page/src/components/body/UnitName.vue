@@ -1,5 +1,5 @@
 <template>
-    <div id="unit-name">
+    <div class="unit-name">
 
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
@@ -36,11 +36,11 @@
         </svg>
 
 
-        <div class="device-title" style="margin-left: 20.26px;width: 225px;height:80px;">
+        <div class="device-title">
             {{this.title}}
         </div>
 
-        <div>
+        <div class="info-tooltip">
             <span class="icon has-tooltip-right" :data-tooltip="this.tooltipData" style="font-size: 22px;">
                 <i class="fas fa-info-circle"></i>
             </span>
@@ -73,18 +73,24 @@
 </script>
 
 <style scoped>
-    #unit-name {
+
+    .unit-name {
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
         width: 320px;
         height: 80px;
+        margin-left: 20px;
         /*border: 1px solid;*/
+    }
 
+    .unit-name:first-child{
+        margin-left: 0px;
     }
 
     .device-title {
-
+        margin-left: 30px;
+        width: 225px;
+        height: 80px;
         /* Title */
         font-style: normal;
         font-weight: bold;
@@ -98,5 +104,10 @@
         /* 353535 */
 
         color: #353535;
+    }
+
+    .info-tooltip{
+        width: 35px;
+        /*border:1px solid;*/
     }
 </style>
