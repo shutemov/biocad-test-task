@@ -110,4 +110,11 @@
         width: 35px;
         /*border:1px solid;*/
     }
+    
+    @media (max-width: 700px) {
+        .unit-name{
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
 </style>

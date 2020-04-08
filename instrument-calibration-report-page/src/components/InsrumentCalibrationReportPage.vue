@@ -3,9 +3,7 @@
 
         <!--  HEAD BLOCK  -->
         <div class="head">
-            <div class="content">
                 <filter-devices class="filter-devices"></filter-devices>
-            </div>
         </div>
 
         <!--  BODY  BLOCK   -->
@@ -151,7 +149,7 @@
     }
 
     /*---*/
-    
+
     .head {
         width: 390px;
         height: 90px;
@@ -201,6 +199,45 @@
         /*form*/
         padding: 20px 18px 20px 18px;
         height: 330px;
+    }
+
+    @media (max-width: 700px) {
+
+        .main-container {
+            /*form*/
+            /*box-sizing: border-box;*/
+            width: 100%;
+            padding: 0px;
+        }
+
+        .head {
+            /*form*/
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .body {
+            /*form*/
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
+        }
+
+        .left-side{
+            /*form*/
+            margin-top: 30px;
+        }
+
+        .right-side {
+            /*form*/
+            margin-left: 0px;
+        }
+
+        .generate-button {
+            /*form*/
+            width: 100%;
+            margin-top: 30px;
+        }
     }
 
 

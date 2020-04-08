@@ -1,6 +1,6 @@
 <template>
     <div class="filter-devices">
-        <div class="filter-devices__title" style="text-align: start;">
+        <div class="filter-devices__title">
             <span class="filter-devices__text">Enter inventory number, guid or bims id</span>
         </div>
 
@@ -68,9 +68,6 @@
         padding: 0px 12px 0px 12px;
 
         /*font*/
-        font-family: "TT Norms Regular";
-        font-style: normal;
-        font-weight: normal;
         font-size: 16px;
         line-height: 24px;
 
@@ -88,12 +85,15 @@
         margin-left: 20px;
 
         /*font*/
-        font-family: "TT Norms Regular";
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
         line-height: 24px;
         color: white;
+    }
+
+    .filter-devices__title {
+        text-align: start;
     }
 
     .filter-devices__text {
@@ -110,5 +110,29 @@
         color: #8C8C8C;
     }
 
+    @media (max-width: 700px) {
+        .filter-devices {
+            width: 100%;
+        }
+
+        .filter-devices__title {
+            text-align: center;
+        }
+
+        .filter-devices__search {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-devices__input {
+            width: 75%;
+        }
+
+        .filter-devices__button {
+            width: 20%;
+        }
+
+    }
 
 </style>

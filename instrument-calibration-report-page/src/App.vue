@@ -26,5 +26,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "TT Norms Regular";
+  font-style: normal;
+  font-weight: normal;
 }
+
+  @media (max-width: 700px) {
+    #app {
+      /*form*/
+      padding: 0px;
+    }
+  }
 </style>

@@ -89,7 +89,6 @@
         box-sizing: border-box;
 
         /*font*/
-        font-family: "TT Norms Regular";
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -150,7 +149,6 @@
             /*form*/
             display: inline-block;
             margin-left: 4px;
-
             /*font*/
             font-size: 14px;
             vertical-align: top;
@@ -161,6 +159,35 @@
             letter-spacing: 0.16px;
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #353535;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .report-filter__select {
+            /*form*/
+            width: 100%;
+        }
+
+        @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+            input[type="radio"] {
+                width: 30px;
+                height: 30px;
+            }
+
+            input[type="radio"]:after {
+                width: 26px;
+                height: 26px;
+            }
+
+
+            input[type="radio"] + label {
+                /*form*/
+                margin-left: 4px;
+                margin-top: 5px;
+                height: 26px;
+                /*font*/
+                font-size: 18px;
+            }
         }
 
 

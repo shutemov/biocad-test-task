@@ -111,10 +111,13 @@
     .infoItem:first-child {
         margin-top: 0px;
     }
+
     /*------------------*/
 
     .device-info {
         /*form*/
+        box-sizing: border-box;
+        padding: 20px 18px 20px 18px;
         width: 550px;
         height: 330px;
         background-color: #F7F7F7;
@@ -125,5 +128,25 @@
         font-style: normal;
         font-weight: 500;
         line-height: 17px;
+    }
+
+    @media (max-width: 700px) {
+
+        /*Analog line-height*/
+        .infoItem {
+            margin-top: 6px;
+        }
+
+        .infoItem:first-child {
+            margin-top: 0px;
+        }
+
+        /*------------------*/
+        .device-info {
+            /*form*/
+            width: 100%;
+            height: auto;
+        }
+
     }
 </style>
