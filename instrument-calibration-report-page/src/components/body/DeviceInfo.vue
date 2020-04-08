@@ -1,5 +1,5 @@
 <template>
-    <div class="notification body-block-device-info" id="body-block-device-info">
+    <div class="device-info">
         <div class="infoItem"
              v-for="itemInfo in updateInfo"
              :key="itemInfo.id">
@@ -102,19 +102,25 @@
 </script>
 
 <style scoped>
+
+    /*Analog line-height*/
     .infoItem {
-        margin-top: 5px;
+        margin-top: 7px;
     }
 
     .infoItem:first-child {
         margin-top: 0px;
     }
+    /*------------------*/
 
-    .body-block-device-info {
-        /*border: 1px solid;*/
-        /*margin-left: 30px;*/
-        /*width: 550px;*/
-        height: auto;
+    .device-info {
+        /*form*/
+        width: 550px;
+        height: 330px;
+        background-color: #F7F7F7;
+        border-radius: 5px;
+
+        /*font*/
         font-size: 14px;
         font-style: normal;
         font-weight: 500;

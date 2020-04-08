@@ -29,10 +29,13 @@
 
 <style scoped>
     tr > th {
+        /*form*/
+        padding: 20px 20px 20px 0px;
+
+        /*font*/
         font-size: 16px;
         line-height: 19px;
         font-style: normal;
         font-weight: normal;
-        padding: 20px 20px 20px 0px;
     }
 </style>
