@@ -76,10 +76,6 @@
 </script>
 
 <style scoped>
-    .report-filter {
-
-    }
-
     .report-filter__select {
         /*form*/
         width: 220px;
@@ -170,11 +166,13 @@
 
         @supports (-webkit-appearance: none) or (-moz-appearance: none) {
             input[type="radio"] {
+                /*form*/
                 width: 30px;
                 height: 30px;
             }
 
             input[type="radio"]:after {
+                /*form*/
                 width: 26px;
                 height: 26px;
             }

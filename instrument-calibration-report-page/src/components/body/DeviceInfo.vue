@@ -26,7 +26,6 @@
 
         props: {
 
-            //
             device: {
                 type: Object,
                 default: function () {
@@ -54,10 +53,6 @@
             return {}
         },
 
-
-        created() {
-
-        },
 
         computed: {
 
@@ -91,7 +86,7 @@
             copy(code) {
                 navigator.clipboard.writeText(code)
                     .then(() => {
-                        alert('code was copied ' + code)
+                        alert('Code was copied ' + code)
                     })
                     .catch(err => {
                         console.log('[ERROR] COPY', err);
@@ -105,10 +100,12 @@
 
     /*Analog line-height*/
     .infoItem {
+        /*form*/
         margin-top: 7px;
     }
 
     .infoItem:first-child {
+        /*form*/
         margin-top: 0px;
     }
 
@@ -134,10 +131,12 @@
 
         /*Analog line-height*/
         .infoItem {
+            /*form*/
             margin-top: 6px;
         }
 
         .infoItem:first-child {
+            /*form*/
             margin-top: 0px;
         }
 
