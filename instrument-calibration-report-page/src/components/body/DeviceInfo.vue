@@ -1,5 +1,5 @@
 <template>
-    <div class="notification body-block-device-info" id="body-block-device-info">
+    <div class="device-info">
         <div class="infoItem"
              v-for="itemInfo in updateInfo"
              :key="itemInfo.id">
@@ -102,22 +102,64 @@
 </script>
 
 <style scoped>
+
+
+    /*Analog line-height*/
     .infoItem {
-        margin-top: 5px;
+        /*form*/
+        margin-top: 7px;
     }
 
     .infoItem:first-child {
+        /*form*/
         margin-top: 0px;
     }
 
-    .body-block-device-info {
-        /*border: 1px solid;*/
-        /*margin-left: 30px;*/
-        /*width: 550px;*/
-        height: auto;
+    /*------------------*/
+
+    .device-info {
+        /*form*/
+        width: 550px;
+        height: 330px;
+        background-color: #F7F7F7;
+        border-radius: 5px;
+
+        /*font*/
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
         line-height: 17px;
+        padding: 20px 18px 20px 18px;
+
+    }
+
+
+    @media (min-width: 300px) and (max-width: 700px) {
+        /*Analog line-height*/
+        .infoItem {
+            /*form*/
+            margin-top: 7px;
+        }
+
+        .infoItem:first-child {
+            /*form*/
+            margin-top: 0px;
+        }
+
+        /*------------------*/
+        .device-info {
+            /*form*/
+            box-sizing:border-box;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            padding: 10px ;
+
+            /*font*/
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 17px;
+        }
     }
 </style>

@@ -1,48 +1,57 @@
 <template>
     <tr>
-
-
-        <!--  DATE  -->
-        <th>
+        <!--  Date  -->
+        <th class="report-body-item__date-cell">
             {{data.when.date}}
             <br>
             {{data.when.time}}
         </th>
 
 
-        <!--   used buffer solution   -->
-        <td>
-            <div v-for="item in data.usedBufferSolution" :key="item">{{item}}</div>
+        <!--   Used buffer solution   -->
+        <td class="report-body-item__used-buffer-solution-cell">
+            <div v-for="item in data.usedBufferSolution" :key="item.id">{{item}}</div>
         </td>
 
 
-        <!--  slope -->
+        <!--  Slope -->
         <td>
-            <div class="">
-                {{data.slope}}
-                <span v-if="getSlopeState" class="icon " style="color:  #6BAE45;font-size: 16px;"><i
-                        class="fas fa-check-circle "></i></span>
-                <span v-else class="icon " style="color: #D10000;font-size: 16px;"><i
-                        class="fas fa-times-circle"></i></span>
+            <div class="report-body-item__slope-cell">
+
+                <div class="report-body-item__slope-cell__text">{{data.slope}}</div>
+
+                <span v-if="getSlopeState"
+                      class="report-body-item__slope-cell__positive-icon">
+                    <i class="fas fa-check-circle "></i>
+                </span>
+                <span v-else
+                      class="report-body-item__slope-cell__negative-icon">
+                    <i class="fas fa-times-circle"></i>
+                </span>
             </div>
         </td>
 
 
-        <!--   offset   -->
+        <!--   Offset   -->
         <td>
-            {{data.offset}}
-            <span v-if="getOffsetState" class="icon " style="color:  #6BAE45;font-size: 16px;">
-                <i class="fas fa-check-circle "></i>
-            </span>
+            <div class="report-body-item__offset-cell">
 
-            <span v-else class="icon " style="color: #D10000;font-size: 16px;">
-                <i class="fas fa-times-circle"></i>
-            </span>
+                <span style="width:50px;">{{data.offset}}</span>
+
+                <span v-if="getOffsetState" style="color:  #6BAE45;font-size: 16px;">
+                    <i class="fas fa-check-circle "></i>
+                </span>
+                <span v-else style="color: #D10000;font-size: 16px;">
+                    <i class="fas fa-times-circle"></i>
+                </span>
+            </div>
+
         </td>
 
 
-        <!--        user        -->
-        <td>{{data.user}}</td>
+        <!--        User        -->
+        <td class="report-body-item__user-cell">{{data.user}}</td>
+
     </tr>
 </template>
 
@@ -103,17 +112,57 @@
 
 <style scoped>
 
+    tr {
+        border-bottom: 1px dashed #E9E9E9;
+        vertical-align: top;
+    }
+
+    tr:last-child {
+        border-bottom: none;
+    }
+
+    tr > * {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
     tr > td {
         font-size: 13px;
-        line-height: 18px;
-        padding: 20px 20px 10px 0px;
+        line-height: 15px;
+        color: #353535;
+
     }
 
     tr > th {
         font-size: 16px;
         line-height: 19px;
+        color: #353535;
         font-style: normal;
-        font-weight: normal;
-        padding: 20px 20px 10px 0px;
+    }
+
+    .report-body-item__slope-cell {
+        display: flex;
+        flex-direction: row;
+        align-items: center
+    }
+
+    .report-body-item__slope-cell__text {
+        width: 50px;
+    }
+
+    .report-body-item__offset-cell {
+        display: flex;
+        flex-direction: row;
+        align-items: center
+    }
+
+    .report-body-item__slope-cell__positive-icon {
+        color: #6BAE45;
+        font-size: 16px;
+    }
+
+    .report-body-item__slope-cell__negative-icon {
+        color: #D10000;
+        font-size: 16px;
     }
 </style>

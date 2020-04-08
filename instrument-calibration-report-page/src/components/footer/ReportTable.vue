@@ -1,27 +1,27 @@
 <template>
-    <div class="section report">
+    <div class="report-table">
 
         <!--  TABLE  -->
-        <table class="table">
+        <table class="report-table__table">
 
             <!--  CAPTION  -->
-            <caption class="title">
-                <b>{{title}} report</b>
+            <caption class="report-table__caption">
+                <b>{{title}}</b>
             </caption>
 
 
             <!--  TABLE HEAD  -->
-            <thead>
-            <calibration-report-table-head :t-head-data="this.tHead"/>
+            <thead class="report-table__thead">
+                 <calibration-report-table-head :t-head-data="this.tHead"/>
             </thead>
 
 
             <!--   TABLE BODY  -->
             <tbody>
-            <calibration-report-table-body-item
-                    v-for="data in this.tBody"
-                    :data="data"
-                    :key="data.id"/>
+                <calibration-report-table-body-item
+                        v-for="data in this.tBody"
+                        :data="data"
+                        :key="data.id"/>
             </tbody>
         </table>
     </div>
@@ -46,7 +46,10 @@
             //Caption of the ReportTable
             title: {
                 type: String,
-                required: true
+                required: true,
+                default: function () {
+                    return 'Calibration report'
+                }
             },
 
             //Titles columns ReportTable
@@ -115,27 +118,34 @@
     }
 </script>
 
-<style scoped>
+<style>
+
     table {
         width: 100%;
-        /* white */
+        text-align: left;
+        border-collapse: collapse;
     }
 
+
     caption {
+        margin-bottom: 40px;
+        /*font*/
         text-align: left;
         font-size: 16px;
         line-height: 19px;
         font-style: normal;
     }
 
-    .report {
-        background: #FFFFFF;
+
+    .report-table {
+        /*form*/
+        padding: 40px;
         overflow: hidden;
         overflow-x: scroll;
+        background: #FFFFFF;
         border: 1px dashed #939DA6;
         box-sizing: border-box;
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
     }
-
 
 </style>

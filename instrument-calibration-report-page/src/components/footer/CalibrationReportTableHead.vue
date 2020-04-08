@@ -1,7 +1,6 @@
 <template>
     <tr>
-        <th v-for="th in this.tHeadData" :key="th.id" v-html="th">
-        </th>
+        <th v-for="th in this.tHeadData" :key="th.id" v-html="th" />
     </tr>
 </template>
 
@@ -28,11 +27,22 @@
 </script>
 
 <style scoped>
+
     tr > th {
-        font-size: 16px;
-        line-height: 19px;
+        /*form*/
+        margin-left: 20px;
+        vertical-align: top;
+        padding: 0px 20px 20px 0px;
+
+        /*font*/
+        font-size: 13px;
         font-style: normal;
-        font-weight: normal;
-        padding: 20px 20px 20px 0px;
+        line-height: 15px;
+        color: #939DA6;
     }
+
+    tr > th:first-child {
+        width: 100px;
+    }
+
 </style>

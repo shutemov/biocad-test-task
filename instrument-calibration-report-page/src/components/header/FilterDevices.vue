@@ -1,20 +1,20 @@
 <template>
     <div class="filter-devices">
-        <div style="text-align: start;">
-            <span id="filter-devices-title">Enter inventory number, guid or bims id</span>
+        <div class="filter-devices__title" style="text-align: start;">
+            <span class="filter-devices__text">Enter inventory number, guid or bims id</span>
         </div>
 
-        <div class="field" id="filter-devices-input">
-            <div class="control">
-                <input class="input is-small" type="text" placeholder="Input ID" v-model="deviceId">
-            </div>
-            <button class="button is-dark" @click="search(deviceId)">Search</button>
+        <div class="filter-devices__search">
+
+            <input class="filter-devices__input" type="text" placeholder="Input ID" v-model="deviceId">
+
+            <button class="filter-devices__button" @click="search(deviceId)">Search</button>
         </div>
     </div>
 </template>
 
 <script>
-    import {mapActions, mapGetters} from "vuex";
+    import {mapActions} from "vuex";
     import {SEARCH_DEVICE_BY_ID} from "@/store/actions";
 
     export default {
@@ -28,21 +28,17 @@
         },
 
 
-        computed: {
-            ...mapGetters(['getFoundDevice']),
-            check() {
-                return this.getFoundDevice
-            }
-        },
-
-
         methods: {
             ...mapActions([SEARCH_DEVICE_BY_ID]),
 
             search(deviceId) {
-                console.log('[method] search', deviceId)
+
+                if (!deviceId) {
+                    alert('You did not enter device ID')
+                    return
+                }
+
                 this[SEARCH_DEVICE_BY_ID](deviceId)
-                this.deviceId = ""
             }
         }
 
@@ -50,52 +46,134 @@
 </script>
 
 <style scoped>
+
     .filter-devices {
-        /*border: 1px solid;*/
+        /*form*/
         width: 320px;
         height: 90px;
-        /*margin-top: 30px;*/
-        /*margin-left: 50px;*/
     }
 
-    #filter-devices-title {
-        height: 24px;
+    .filter-devices__search {
+        /*form*/
+        margin-top: 16px;
+    }
 
-        /* Subheading Mobile */
+    .filter-devices__input {
+        /*form*/
+        width: 210px;
+        height: 30px;
+        background: #FFFFFF;
+        border: 1px solid #E9E9E9;
+        box-sizing: border-box;
+        padding: 0px 12px 0px 12px;
 
-
+        /*font*/
+        font-family: "TT Norms Regular";
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 24px;
 
-        /* identical to box height, or 150% */
-
         letter-spacing: 0.16px;
         font-feature-settings: 'pnum' on, 'lnum' on;
-
-        /* 8C8C8C */
-
-        color: #8C8C8C;
+        color: #353535;
     }
 
-
-    .filter-devices button {
+    .filter-devices__button {
+        /*form*/
         width: 90px;
         height: 40px;
-        border-radius: 0
+        background: #353535;
+        border: none;
+        margin-left: 20px;
+
+        /*font*/
+        font-family: "TT Norms Regular";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: white;
     }
 
-    #filter-devices-input {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 16px;
+    .filter-devices__text {
+        /*form*/
+        height: 24px;
+
+        /*font*/
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #8C8C8C;
+
     }
 
-    #filter-devices-input input {
-        width: 210px;
-        height: 30px;
+
+    @media (max-width:700px){
+        .filter-devices {
+            /*form*/
+            width: 100%;
+            height: 90px;
+        }
+
+        .filter-devices__search {
+            /*form*/
+            margin-top: 16px;
+        }
+
+        .filter-devices__input {
+            /*form*/
+            width: 70%;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px solid #E9E9E9;
+            box-sizing: border-box;
+            padding: 0px 12px 0px 12px;
+
+            /*font*/
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+
+            letter-spacing: 0.16px;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            color: #353535;
+        }
+
+        .filter-devices__button {
+            /*form*/
+            width: 20%;
+            height: 40px;
+            background: #353535;
+            border: none;
+            margin-left: 20px;
+
+            /*font*/
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            color: white;
+        }
+
+        .filter-devices__text {
+            /*form*/
+            height: 24px;
+
+            /*font*/
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.16px;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            color: #8C8C8C;
+        }
+
     }
+
 </style>
