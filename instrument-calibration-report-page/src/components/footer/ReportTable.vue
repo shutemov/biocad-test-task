@@ -1,5 +1,5 @@
 <template>
-    <div class="report-table">
+    <div class="report">
 
         <!--  TABLE  -->
         <table class="report-table__table">
@@ -18,10 +18,12 @@
 
             <!--   TABLE BODY  -->
             <tbody class="report-table__tbody">
+
             <calibration-report-table-body-item
                     v-for="data in this.tBody"
                     :data="data"
                     :key="data.id"/>
+
             </tbody>
         </table>
     </div>
@@ -47,7 +49,7 @@
             title: {
                 type: String,
                 required: true,
-                default:function () {
+                default: function () {
                     return 'Calibration report'
                 }
             },
@@ -119,28 +121,44 @@
 </script>
 
 <style>
-    table {
-        width: 100%;
-    }
-
-    tbody > tr {
-        border-bottom: 1px solid #E9E9E9;
-    }
-
-    table > tbody > tr:last-child {
-        border-bottom: none;
-    }
 
     caption {
         /*font*/
         text-align: left;
         font-size: 16px;
         line-height: 19px;
-        font-style: normal;
+        margin-bottom: 30px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        text-align: left;
     }
 
 
-    .report-table {
+    /*tr classes*/
+    .report-header-item{
+        vertical-align: top;
+    }
+
+    .report-body-item {
+        border-bottom: 1px solid #E9E9E9;
+        vertical-align: top;
+    }
+
+    .report-body-item >td{
+       margin-top: 10px;
+    }
+
+    .report-body-item:last-child {
+        border-bottom: none;
+    }
+
+    /*---*/
+
+
+    .report {
         /*form*/
         padding: 40px;
         overflow: hidden;

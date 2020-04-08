@@ -38,7 +38,6 @@
         <!--   Offset   -->
         <td>
             <div class="report-body-item__offset-cell">
-
                 <span style="width:50px;">{{data.offset}}</span>
 
                 <span v-if="getOffsetState" style="color:  #6BAE45;font-size: 16px;">
@@ -48,7 +47,6 @@
                     <i class="fas fa-times-circle"></i>
                 </span>
             </div>
-
         </td>
 
 
@@ -115,50 +113,51 @@
 
 <style scoped>
 
-
-
-    tr > td {
+    td,th{
         /*form*/
-        padding: 20px 20px 10px 0px;
-
-        /*font*/
-        font-size: 13px;
-        line-height: 18px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
-    tr > th {
+    td{
         /*form*/
-        padding: 20px 20px 10px 0px;
-
+        padding-left: 20px;
         /*font*/
-        font-size: 16px;
-        line-height: 19px;
-        font-style: normal;
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    th{
+        /*font*/
         font-weight: normal;
     }
 
-    .report-body-item__slope-cell {
+    .report-body-item__slope-cell,
+    .report-body-item__offset-cell {
+        /*form*/
         display: flex;
         flex-direction: row;
         align-items: center
+    }
+
+    .report-body-item__used-buffer-solution-cell{
+      /*font*/
+        line-height: 17px;
     }
 
     .report-body-item__slope-cell__text {
+        /*form*/
         width: 50px;
     }
 
-    .report-body-item__offset-cell {
-        display: flex;
-        flex-direction: row;
-        align-items: center
-    }
-
     .report-body-item__slope-cell__positive-icon {
+        /*font*/
         color: #6BAE45;
         font-size: 16px;
     }
 
     .report-body-item__slope-cell__negative-icon {
+        /*font*/
         color: #D10000;
         font-size: 16px;
     }

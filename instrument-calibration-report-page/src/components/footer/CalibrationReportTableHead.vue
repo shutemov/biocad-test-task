@@ -1,8 +1,13 @@
 <template>
-    <tr>
-        <th v-for="th in this.tHeadData" :key="th.id" v-html="th">
-        </th>
-    </tr>
+        <tr class="report-header-item">
+
+            <th class="report-header-item__content"
+                v-for="th in this.tHeadData"
+                :key="th.id"
+                v-html="th">
+            </th>
+
+        </tr>
 </template>
 
 <script>
@@ -28,14 +33,15 @@
 </script>
 
 <style scoped>
-    tr > th {
-        /*form*/
-        padding: 20px 20px 20px 0px;
 
+    th:not(:first-child){
+        /*form*/
+        padding-left: 20px;
+    }
+
+    .report-header-item__content{
         /*font*/
-        font-size: 16px;
-        line-height: 19px;
-        font-style: normal;
+        color: #939DA6;
         font-weight: normal;
     }
 </style>
