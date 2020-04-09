@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link href="//db.onlinewebfonts.com/c/07bc241768c969f6b6a27a7bf0dfb490?family=TT+Norms+Regular" rel="stylesheet" type="text/css"/>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <style type="text/css">
+    @font-face {
+        font-family: "TT Norms Regular";
+        src: url("https://db.onlinewebfonts.com/t/07bc241768c969f6b6a27a7bf0dfb490.eot");
+        /* IE9*/
+        src: url("https://db.onlinewebfonts.com/t/07bc241768c969f6b6a27a7bf0dfb490.eot?#iefix") format("embedded-opentype"),
+            /* IE6-IE8 */
+            url("https://db.onlinewebfonts.com/t/07bc241768c969f6b6a27a7bf0dfb490.woff2") format("woff2"),
+            /* chrome firefox */
+            url("https://db.onlinewebfonts.com/t/07bc241768c969f6b6a27a7bf0dfb490.woff") format("woff"),
+            /* chrome firefox */
+            url("https://db.onlinewebfonts.com/t/07bc241768c969f6b6a27a7bf0dfb490.ttf") format("truetype"),
+            /* chrome firefox opera Safari, Android, iOS 4.2+*/
+            url("https://db.onlinewebfonts.com/t/07bc241768c969f6b6a27a7bf0dfb490.svg#TT Norms Regular") format("svg");
+        /* iOS 4.1- */
+    }
+    </style>
+</head>
+
+<body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        <strong>We're sorry but
+            <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-  </body>
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</body>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
 </html>

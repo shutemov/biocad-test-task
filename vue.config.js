@@ -1,4 +1,7 @@
 module.exports = {
+    outputDir: 'docs',
+    publicPath: process.env.NODE_ENV === 'production' ?
+        '/biocad-test-task/' : '/',
     pages: {
         index: {
             // точка входа для страницы
