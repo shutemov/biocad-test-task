@@ -116,7 +116,7 @@
         box-sizing: border-box;
         padding: 20px 18px 20px 18px;
         width: 550px;
-        height: 330px;
+        height: auto;
         background-color: #F7F7F7;
         border-radius: 5px;
 
