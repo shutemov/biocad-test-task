@@ -45,7 +45,7 @@
         </div>
 
         <div class="info-tooltip">
-            <span class="has-tooltip-right" :data-tooltip="this.tooltipData" style="font-size: 22px;color:#535353;">
+            <span style="font-size: 22px;color:#535353;">
                 <i class="fas fa-info-circle"></i>
             </span>
         </div>
