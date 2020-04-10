@@ -39,6 +39,8 @@
                 }
 
                 this[SEARCH_DEVICE_BY_ID](deviceId)
+
+                this.deviceId = ""
             }
         }
 

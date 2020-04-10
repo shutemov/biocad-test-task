@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <!--        FOOTER BLOCK-->
+        <!--  FOOTER BLOCK  -->
         <div class="footer-block">
             <report-table
                     :title="reportTable.reportType"
@@ -131,6 +131,7 @@
     /*margin of global elements*/
 
     .body{
+        /*form*/
         margin-top: 20px;
     }
 
@@ -142,17 +143,20 @@
     /*---*/
 
     .head {
+        /*form*/
         width: 390px;
         height: 90px;
     }
 
     .body {
+        /*form*/
         display: flex;
         flex-direction: row;
         width: 100%;
     }
 
     .left-side {
+        /*form*/
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -164,6 +168,7 @@
     }
 
     .report-filter {
+        /*form*/
         margin-top: 30px;
     }
 
@@ -189,7 +194,6 @@
     .device-info {
         /*form*/
         padding: 20px 18px 20px 18px;
-        /*height: 330px;*/
     }
 
 
