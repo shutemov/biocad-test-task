@@ -2,7 +2,7 @@
     <div class="report">
 
         <!--  TABLE  -->
-        <table class="report-table__table">
+        <table class="report__table">
 
             <!--  CAPTION  -->
             <caption class="report-table__caption">
@@ -11,18 +11,18 @@
 
 
             <!--  TABLE HEAD  -->
-            <thead class="report-table__thead">
-            <calibration-report-table-head :t-head-data="this.tHead"/>
+            <thead class="report__thead">
+                <calibration-report-table-head :t-head-data="this.tHead"/>
             </thead>
 
 
             <!--   TABLE BODY  -->
-            <tbody class="report-table__tbody">
+            <tbody class="report__tbody">
 
-            <calibration-report-table-body-item
-                    v-for="data in this.tBody"
-                    :data="data"
-                    :key="data.id"/>
+                <calibration-report-table-body-item
+                        v-for="data in this.tBody"
+                        :data="data"
+                        :key="data.id"/>
 
             </tbody>
         </table>
@@ -137,7 +137,8 @@
     }
 
     /*tr classes*/
-    .report-header-item{
+
+    .report-header-item {
         vertical-align: top;
         font-size: 13px;
     }
@@ -147,23 +148,35 @@
         vertical-align: top;
     }
 
-
-
     .report-body-item:last-child {
         border-bottom: none;
     }
 
     /*---*/
 
-
     .report {
         /*form*/
         padding: 39px 40px 60px 40px;
-        overflow-x: hidden;
         background: #FFFFFF;
         border: 1px dashed #939DA6;
         box-sizing: border-box;
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    @media screen and (max-width: 700px) {
+        .report {
+            /*form*/
+            padding: 19.5px 20px 30px 20px;
+            overflow: scroll;
+        }
+
+        table {
+            /*form*/
+            border-collapse: collapse;
+            width: 900px;
+            /*font*/
+            text-align: left;
+        }
     }
 
 </style>

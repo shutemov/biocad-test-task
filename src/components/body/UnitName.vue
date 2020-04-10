@@ -44,11 +44,10 @@
             <span class="device-title__device-code">{{this.unitNameData.deviceCode}}</span>
         </div>
 
-        <div class="info-tooltip">
-            <span style="font-size: 22px;color:#535353;">
+
+        <span class="info-tooltip">
                 <i class="fas fa-info-circle"></i>
-            </span>
-        </div>
+        </span>
     </div>
 </template>
 
@@ -89,9 +88,6 @@
         flex-direction: row;
         width: 320px;
         height: 80px;
-
-        /*font*/
-        /*text-align: left;*/
     }
 
     .device-title {
@@ -111,23 +107,45 @@
         font-feature-settings: 'pnum' on, 'lnum' on;
     }
 
-    .device-title__device-code{
+    .device-title__device-code {
         letter-spacing: 2.5px;
     }
 
-    .unit-name:first-child {
+    .logo {
         margin-left: 0px;
     }
 
     .info-tooltip {
         position: absolute;
         right: 0px;
+        font-size: 22px;
+        color: #535353;
     }
 
     @media (max-width: 700px) {
         .unit-name {
+
             width: 100%;
             justify-content: space-around;
+        }
+
+        .info-tooltip {
+            /*form*/
+            position: relative;
+            margin-right: 10px;
+
+            /*font*/
+            font-size: 25px;
+        }
+
+        .device-title {
+            /*font*/
+            text-align: center;
+        }
+
+        .logo {
+            /*form*/
+            margin-left: 10px;
         }
     }
 </style>

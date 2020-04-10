@@ -194,6 +194,7 @@
                 height: 26px;
                 /*font*/
                 font-size: 18px;
+                width: 80%;
             }
         }
 

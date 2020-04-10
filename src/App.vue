@@ -38,7 +38,9 @@ body{
   @media (max-width: 700px) {
     #app {
       /*form*/
-      padding: 0px;
+      padding: 6.0px 5.0px 20.0px 5.0px;
+      /*padding:0px;*/
+      box-sizing: border-box;
     }
   }
 </style>

@@ -232,6 +232,8 @@
             /*form*/
             width: 100%;
             margin-top: 30px;
+            font-size: 17px;
+            letter-spacing: 0.8px;
         }
     }
 </style>
