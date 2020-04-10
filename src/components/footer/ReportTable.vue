@@ -127,7 +127,7 @@
         text-align: left;
         font-size: 16px;
         line-height: 19px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     table {
@@ -136,10 +136,10 @@
         text-align: left;
     }
 
-
     /*tr classes*/
     .report-header-item{
         vertical-align: top;
+        font-size: 13px;
     }
 
     .report-body-item {
@@ -147,9 +147,7 @@
         vertical-align: top;
     }
 
-    .report-body-item >td{
-       margin-top: 10px;
-    }
+
 
     .report-body-item:last-child {
         border-bottom: none;
@@ -160,14 +158,12 @@
 
     .report {
         /*form*/
-        padding: 40px;
-        overflow: hidden;
-        overflow-x: scroll;
+        padding: 39px 40px 60px 40px;
+        overflow-x: hidden;
         background: #FFFFFF;
         border: 1px dashed #939DA6;
         box-sizing: border-box;
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
     }
-
 
 </style>

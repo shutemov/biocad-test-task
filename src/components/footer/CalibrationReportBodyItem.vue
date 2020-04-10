@@ -11,9 +11,7 @@
 
         <!--   Used buffer solution   -->
         <td class="report-body-item__used-buffer-solution-cell">
-            <div style="width: 220px;">
-                <div v-for="item in data.usedBufferSolution" :key="item.id">{{item}}</div>
-            </div>
+            <div v-for="item in data.usedBufferSolution" :key="item.id">{{item}}</div>
         </td>
 
 
@@ -38,7 +36,7 @@
         <!--   Offset   -->
         <td>
             <div class="report-body-item__offset-cell">
-                <span style="width:50px;">{{data.offset}}</span>
+                <div class="report-body-item__offset-cell__text">{{data.offset}}</div>
 
                 <span v-if="getOffsetState" style="color:  #6BAE45;font-size: 16px;">
                     <i class="fas fa-check-circle "></i>
@@ -113,42 +111,65 @@
 
 <style scoped>
 
-    td,th{
+
+    td, th {
         /*form*/
-        padding-top: 20px;
-        padding-bottom: 20px;
+        height: auto;
+        padding-top: 22px;
+        padding-bottom: 13px;
     }
 
-    td{
+    td {
         /*form*/
-        padding-left: 20px;
-        /*font*/
         font-size: 13px;
         line-height: 15px;
+        letter-spacing: 0.3px;
     }
 
-    th{
+    th:first-child {
+        /*form*/
+        width: 117px;
         /*font*/
         font-weight: normal;
     }
 
-    .report-body-item__slope-cell,
-    .report-body-item__offset-cell {
+
+    .report-body-item__date-cell {
+        /*font*/
+        letter-spacing: 0.9px;
+    }
+
+    .report-body-item__slope-cell {
         /*form*/
+        width: 87px;
         display: flex;
         flex-direction: row;
-        align-items: center
+        align-items: center;
+
     }
 
-    .report-body-item__used-buffer-solution-cell{
-      /*font*/
+    .report-body-item__offset-cell {
+        /*form*/
+        width: 92px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .report-body-item__used-buffer-solution-cell {
+        /*form*/
+        width: 238px;
+        /*font*/
         line-height: 17px;
+        letter-spacing: 0.3px;
     }
 
-    .report-body-item__slope-cell__text {
+    .report-body-item__slope-cell__text,
+    .report-body-item__offset-cell__text {
         /*form*/
         width: 50px;
     }
+
 
     .report-body-item__slope-cell__positive-icon {
         /*font*/

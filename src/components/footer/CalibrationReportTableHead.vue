@@ -1,13 +1,13 @@
 <template>
-        <tr class="report-header-item">
+    <tr class="report-header-item">
 
-            <th class="report-header-item__content"
-                v-for="th in this.tHeadData"
-                :key="th.id"
-                v-html="th">
-            </th>
+        <th class="report-header-item__content"
+            v-for="th in this.tHeadData"
+            :key="th.id"
+            v-html="th">
+        </th>
 
-        </tr>
+    </tr>
 </template>
 
 <script>
@@ -34,12 +34,8 @@
 
 <style scoped>
 
-    th:not(:first-child){
-        /*form*/
-        padding-left: 20px;
-    }
 
-    .report-header-item__content{
+    .report-header-item__content {
         /*font*/
         color: #939DA6;
         font-weight: normal;

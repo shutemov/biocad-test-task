@@ -158,6 +158,11 @@
         justify-content: space-between;
     }
 
+    .right-side {
+        /*form*/
+        margin-left: 30px;
+    }
+
     .report-filter {
         margin-top: 30px;
     }
@@ -179,11 +184,6 @@
         line-height: 24px;
         letter-spacing: 0.16px;
         font-feature-settings: "pnum" on, "lnum" on;
-    }
-
-    .right-side {
-        /*form*/
-        margin-left: 30px;
     }
 
     .device-info {
