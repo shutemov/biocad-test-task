@@ -122,7 +122,9 @@ const state = {
 
     // Mock unit name component data
     unitName: {
-        title: 'Аналитические весы OHAUS Adventurer АХ324 (B715976163)'
+        title: 'Аналитические весы',
+        model: 'OHAUS Adventurer',
+        deviceCode:'АХ324 (B715976163)'
     },
 
     // Value is assigned by mutation [SET_FOUND_DEVICE]
@@ -143,7 +145,7 @@ const getters = {
 
     getBodyReportTableData: state => state.calibrationCase.bodyReportTableData,
 
-    getUnitNameData: state => state.unitName.title,
+    getUnitNameData: state => state.unitName,
 
 }
 
