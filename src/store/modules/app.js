@@ -45,8 +45,8 @@ const state = {
 
         headReportTableData: [
             'Data',
-            'Used Buffer Solution',
-            'Slope, % <br> Norm 95-100',
+            'Used Buffer Solutions',
+            'Slope, % <br> Norm 95-105',
             'Offset, mV <br> Norm ± (0-20)',
             'User',
         ],
@@ -64,7 +64,7 @@ const state = {
                     'В4: № 2000460789536: pH 7.00',
                     'В5: № 2000460789536: pH 9.21',
                 ],
-                slope: 98.1,
+                slope: 98.7,
                 offset: -0.3,
                 user: 'Иванов Генадий Петрович'
             },
@@ -80,7 +80,7 @@ const state = {
                     'В4: № 2000460789536: pH 7.00',
                     'В5: № 2000460789536: pH 9.21',
                 ],
-                slope: 98.1,
+                slope: 98.7,
                 offset: -0.3,
                 user: 'Петров Иван Генадьевич'
             },
@@ -96,7 +96,7 @@ const state = {
                     'В4: № 2000460789536: pH 7.00',
                     'В5: № 2000460789536: pH 9.21',
                 ],
-                slope: 98.1,
+                slope: 98.7,
                 offset: -0.3,
                 user: 'Петров Генадий Иванович '
             },
