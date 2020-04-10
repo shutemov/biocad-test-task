@@ -1,39 +1,32 @@
 <template>
     <div class="main-container">
-
         <!--  HEAD BLOCK  -->
         <div class="head">
-                <filter-devices class="filter-devices"></filter-devices>
+            <filter-devices></filter-devices>
         </div>
 
         <!--  BODY  BLOCK   -->
         <div class="body">
-
             <!--   LEFT SIDE   -->
             <div class="left-side ">
-
                 <div class="left-side__content">
-
                     <!--  UNIT NAME  -->
-                    <unit-name :title="this.unitNameTitle"></unit-name>
+                    <unit-name :title="this.unitName"></unit-name>
 
                     <!--  REPORT FILTER  -->
                     <report-filters class="report-filter"></report-filters>
-
                 </div>
 
                 <!--  GENERATE REPORT BUTTON  -->
                 <button class="generate-button" @click="generate">
                     Generate report
                 </button>
-
             </div>
 
             <!--  RIGHT SIDE  -->
             <div class="right-side">
                 <device-info class="device-info" :device="getDevice"></device-info>
             </div>
-
         </div>
 
         <!--        FOOTER BLOCK-->
@@ -41,29 +34,30 @@
             <report-table
                     :title="reportTable.reportType"
                     :t-head="reportTable.tHeadReportTableData"
-                    :t-body="reportTable.tBodyReportTableData"/>
+                    :t-body="reportTable.tBodyReportTableData"
+            />
         </div>
     </div>
-
 </template>
 
 <script>
-    import filterDevices from '@/components/header/FilterDevices'
-    import unitName from '@/components/body/UnitName'
-    import reportFilters from '@/components/body/ReportFilters'
-    import deviceInfo from '@/components/body/DeviceInfo'
-    import reportTable from '@/components/footer/ReportTable'
+    import filterDevices from "@/components/header/FilterDevices";
+    import unitName from "@/components/body/UnitName";
+    import reportFilters from "@/components/body/ReportFilters";
+    import deviceInfo from "@/components/body/DeviceInfo";
+    import reportTable from "@/components/footer/ReportTable";
     import {mapGetters} from "vuex";
 
-
     export default {
-        name: 'InsrumentCalibrationReportPage',
-
+        name: "InsrumentCalibrationReportPage",
 
         components: {
-            filterDevices, unitName, reportFilters, deviceInfo, reportTable,
+            filterDevices,
+            unitName,
+            reportFilters,
+            deviceInfo,
+            reportTable
         },
-
 
         data() {
             return {
@@ -72,66 +66,63 @@
 
                     headReportTableData: [],
 
-                    bodyReportTableData: [],
+                    bodyReportTableData: []
                 },
 
-                unitNameTitle: undefined,
-            }
+                unitName: undefined
+            };
         },
 
-
         created() {
-
             // Get initional state for table
 
-            this.reportTable.reportType = this.$store.getters.getReportType
-            this.reportTable.tHeadReportTableData = this.getTableHeadData
-            this.reportTable.tBodyReportTableData = this.getTableBodyData
+            this.reportTable.reportType = this.$store.getters.getReportType;
+            this.reportTable.tHeadReportTableData = this.getTableHeadData;
+            this.reportTable.tBodyReportTableData = this.getTableBodyData;
 
             // Get initional state for UnitName
-            this.unitNameTitle = this.$store.getters.getUnitNameData
-
+            this.unitName = this.$store.getters.getUnitNameData;
         },
 
         computed: {
-
-            ...mapGetters(['getFoundDevice', 'getHeadReportTableData', 'getBodyReportTableData']),
+            ...mapGetters([
+                "getFoundDevice",
+                "getHeadReportTableData",
+                "getBodyReportTableData"
+            ]),
 
             getDevice() {
-                return this.getFoundDevice
+                return this.getFoundDevice;
             },
 
             getTableHeadData() {
-                return [...this.getHeadReportTableData]
+                return [...this.getHeadReportTableData];
             },
 
             getTableBodyData() {
-                return [...this.getBodyReportTableData]
+                return [...this.getBodyReportTableData];
             }
-
         },
 
         methods: {
-
-            ...mapGetters(['getReportType']),
+            ...mapGetters(["getReportType"]),
 
             generate() {
-                let reportType = this.getReportType()
+                let reportType = this.getReportType();
 
                 if (!reportType) {
-                    alert('Choose report type option')
-                    return
+                    alert("Choose report type option");
+                    return;
                 }
 
                 //set the selected item for generation report
-                this.reportTable.reportType = this.getReportType() + ' report'
+                this.reportTable.reportType = this.getReportType() + " report";
             }
         }
-    }
+    };
 </script>
 
 <style>
-
     .main-container {
         width: auto;
         padding-left: 50px;
@@ -139,8 +130,8 @@
 
     /*margin of global elements*/
 
-    .main-container > .head, .body {
-        margin-top: 30px;
+    .body{
+        margin-top: 20px;
     }
 
     .footer-block {
@@ -175,9 +166,10 @@
         /*form*/
         width: 180px;
         height: 40px;
-        background: #4990E2;
+        background: #4990e2;
         border-radius: 3px;
         border: none;
+        margin-top:50px;
 
         /*font*/
         color: white;
@@ -186,7 +178,7 @@
         font-size: 14px;
         line-height: 24px;
         letter-spacing: 0.16px;
-        font-feature-settings: 'pnum' on, 'lnum' on;
+        font-feature-settings: "pnum" on, "lnum" on;
     }
 
     .right-side {
@@ -197,11 +189,11 @@
     .device-info {
         /*form*/
         padding: 20px 18px 20px 18px;
-        height: 330px;
+        /*height: 330px;*/
     }
 
-    @media (max-width: 700px) {
 
+    @media (max-width: 700px) {
         .main-container {
             /*form*/
             /*box-sizing: border-box;*/
@@ -222,7 +214,7 @@
             width: 100%;
         }
 
-        .left-side{
+        .left-side {
             /*form*/
             margin-top: 30px;
         }
@@ -238,7 +230,5 @@
             margin-top: 30px;
         }
     }
-
-
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

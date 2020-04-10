@@ -1,7 +1,7 @@
 <template>
     <div class="unit-name">
 
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="logo" width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
                 <path d="M22.3506 10.0006C21.8935 10.0006 21.5228 9.62745 21.5228 9.16724V5.83414C21.5228 5.37393 21.8935 5.00082 22.3506 5.00082C22.8078 5.00082 23.1784 5.37393 23.1784 5.83414V9.16732C23.1783 9.62745 22.8078 10.0006 22.3506 10.0006Z"
                       fill="#FFA000"/>
@@ -37,7 +37,11 @@
 
 
         <div class="device-title">
-            {{this.title}}
+            <span class="device-title__device-title">{{this.unitNameData.title}}</span>
+            <br>
+            <span class="device-title__device-model">{{this.unitNameData.model}}</span>
+            <br>
+            <span class="device-title__device-code">{{this.unitNameData.deviceCode}}</span>
         </div>
 
         <div class="info-tooltip">
@@ -54,10 +58,14 @@
 
         props: {
 
-            title: {
-                type: String,
+            unitNameData: {
+                type: Object,
                 default: function () {
-                    return 'You can find unit by ID'
+                    return {
+                        title: 'Аналитические весы',
+                        model: 'OHAUS Adventurer',
+                        deviceCode: 'АХ324 (B715976163)'
+                    }
                 }
             },
 
@@ -75,44 +83,49 @@
 <style scoped>
 
     .unit-name {
+        /*form*/
         display: flex;
+        position: relative;
         flex-direction: row;
         width: 320px;
         height: 80px;
-        margin-left: 20px;
-        /*border: 1px solid;*/
-    }
 
-    .unit-name:first-child{
-        margin-left: 0px;
+        /*font*/
+        /*text-align: left;*/
     }
 
     .device-title {
-        margin-left: 30px;
-        width: 225px;
+        /*form*/
+        margin-left: 20px;
+        width: 100%;
         height: 80px;
-        /* Title */
+
+        /*font*/
+        color: #353535;
+        text-align: left;
         font-style: normal;
-        font-weight: bold;
+        font-weight: 600;
         font-size: 20px;
         line-height: 24px;
-        /* or 120% */
-
         letter-spacing: 0.5px;
         font-feature-settings: 'pnum' on, 'lnum' on;
-
-        /* 353535 */
-
-        color: #353535;
     }
 
-    .info-tooltip{
-        width: 35px;
-        /*border:1px solid;*/
+    .device-title__device-code{
+        letter-spacing: 2.5px;
     }
-    
+
+    .unit-name:first-child {
+        margin-left: 0px;
+    }
+
+    .info-tooltip {
+        position: absolute;
+        right: 0px;
+    }
+
     @media (max-width: 700px) {
-        .unit-name{
+        .unit-name {
             width: 100%;
             justify-content: space-around;
         }

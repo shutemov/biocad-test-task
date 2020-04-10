@@ -37,7 +37,7 @@
                         model: 'AX-123',
                         responsibleUnit: 'Группа обслуживания лабораторного оборудования',
                         operationalUnit: 'Химико-аналитическая лаборатория 2.0',
-                        MOL: 'Петров Петр Петрович',
+                        MOL: 'Иванов Иван Иванович',
                         territory: 'г.Санкт-Петербург(Нойдорф)',
                         serialNumber: 'B715976163',
                         GUID: '508b2a71-662e-4983-ae0c-3cb0c1cd21c5',
@@ -101,7 +101,9 @@
     /*Analog line-height*/
     .infoItem {
         /*form*/
-        margin-top: 7px;
+        margin-top: 5px;
+        letter-spacing: 0.25px;
+        text-align: left;
     }
 
     .infoItem:first-child {
@@ -116,15 +118,24 @@
         box-sizing: border-box;
         padding: 20px 18px 20px 18px;
         width: 550px;
-        height: auto;
+        height: 100%;
         background-color: #F7F7F7;
         border-radius: 5px;
 
         /*font*/
         font-size: 14px;
         font-style: normal;
-        font-weight: 500;
         line-height: 17px;
+    }
+
+    .deviceProp {
+        color: #8c8c8c;
+        font-weight: lighter;
+        letter-spacing: 0.2px;
+    }
+
+    .propValue {
+        color: #444651;
     }
 
     @media (max-width: 700px) {

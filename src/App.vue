@@ -30,6 +30,11 @@ export default {
   font-weight: normal;
 }
 
+body{
+    margin:0;
+    padding: 0;
+}
+
   @media (max-width: 700px) {
     #app {
       /*form*/

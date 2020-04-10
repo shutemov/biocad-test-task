@@ -12,19 +12,18 @@
         <div class="report-filter__checkradio" style="display: flex;flex-direction: column;margin-top: 10px;">
 
             <div>
-                <input class=""
-                       id="calibrationRadio"
+                <input id="calibrationRadio"
                        type="radio"
                        name="reportTypeRadio"
                        value="Calibration"
-                       checked="checked"
+                       checked
                        v-model="reportType"
                        @change="setReportType">
                 <label for="calibrationRadio">Calibration</label>
             </div>
 
             <div>
-                <input class="is-checkradio is-info"
+                <input
                        id="measuringRadio"
                        type="radio"
                        name="reportTypeRadio"
@@ -35,7 +34,7 @@
             </div>
 
             <div>
-                <input class="is-checkradio is-info"
+                <input
                        id="usingRadio"
                        type="radio"
                        name="reportTypeRadio"
@@ -83,6 +82,7 @@
         background: #FFFFFF;
         border: 1px solid #E9E9E9;
         box-sizing: border-box;
+        padding-left: 10px;
 
         /*font*/
         font-style: normal;
@@ -96,7 +96,7 @@
 
     .report-filter__checkradio > div {
         /*form*/
-        margin-top: 12px;
+        margin-top: 10px;
     }
 
 
@@ -104,6 +104,7 @@
 
     @supports (-webkit-appearance: none) or (-moz-appearance: none) {
         input[type="radio"] {
+            /*form*/
             --active: #fff;
             --active-inner: #4990E2;
             --border: #c1c1c1;
@@ -111,8 +112,8 @@
             --background: #fff;
             -webkit-appearance: none;
             -moz-appearance: none;
-            width: 21px;
-            height: 21px;
+            width: 20px;
+            height: 20px;
             outline: none;
             display: inline-block;
             vertical-align: top;
@@ -125,29 +126,36 @@
         }
 
         input[type="radio"]:after {
+
+            left: 0;
+            top: 0;
+            position: absolute;
+            /*form*/
             display: block;
-            width: 17px;
-            height: 17px;
+            content: "";
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: var(--active-inner);
             opacity: var(--o, 0);
             transform: scale(var(--s, 0.7));
-            content: "";
+        }
+
+        input[type='radio']:checked {
+            --o:1;
+            --s: .5;
         }
 
 
-        input[type="radio"]:checked {
-            --o: 1;
-            --s: 0.5;
-        }
 
         input[type="radio"] + label {
             /*form*/
+            width: 90%;
             display: inline-block;
-            margin-left: 4px;
+            margin-left: 11px;
+
             /*font*/
             font-size: 14px;
-            vertical-align: top;
             cursor: pointer;
             font-style: normal;
             font-weight: normal;
@@ -157,6 +165,7 @@
             color: #353535;
         }
     }
+
 
     @media (max-width: 700px) {
         .report-filter__select {

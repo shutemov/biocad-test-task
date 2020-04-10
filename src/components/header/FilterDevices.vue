@@ -6,7 +6,7 @@
 
         <div class="filter-devices__search">
 
-            <input class="filter-devices__input" type="text" placeholder="Input ID" v-model="deviceId">
+            <input class="filter-devices__input" type="text" placeholder="A-OO1234" v-model="deviceId">
 
             <button class="filter-devices__button" @click="search(deviceId)">Search</button>
         </div>
@@ -70,8 +70,7 @@
         /*font*/
         font-size: 16px;
         line-height: 24px;
-
-        letter-spacing: 0.16px;
+        letter-spacing: 0.26px;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #353535;
     }
