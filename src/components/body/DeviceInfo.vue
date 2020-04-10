@@ -86,7 +86,7 @@
             copy(code) {
                 navigator.clipboard.writeText(code)
                     .then(() => {
-                        alert('Code was copied ' + code)
+                        console.log('Code was copied ' + code)
                     })
                     .catch(err => {
                         console.log('[ERROR] COPY', err);
