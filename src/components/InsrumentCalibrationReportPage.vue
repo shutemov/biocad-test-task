@@ -142,7 +142,7 @@
     }
 
     .footer-block {
-        margin-top: 50px;
+        margin-top: 45px;
     }
 
     /*---*/
