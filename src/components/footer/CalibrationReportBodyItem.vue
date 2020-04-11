@@ -116,7 +116,7 @@
 
 <style scoped>
 
-    .report-body-item{
+    .report-body-item {
         border-bottom: 1px solid #E9E9E9;
         vertical-align: top;
     }
@@ -131,16 +131,16 @@
         letter-spacing: 0.3px;
     }
 
+    .report-body-item__th {
+        width: 117px;
+        font-weight: normal;
+    }
+
     .report-body-item__th,
     .report-body-item__td {
         height: auto;
         padding-top: 22px;
         padding-bottom: 13px;
-    }
-
-    .report-body-item__th {
-        width: 117px;
-        font-weight: normal;
     }
 
     .date-cell {
@@ -166,7 +166,7 @@
     }
 
     .user-cell {
-        /*width: 300px;*/
+
     }
 
     .used-buffer-solution-cell__text {
@@ -187,6 +187,5 @@
         color: #D10000;
         font-size: 16px;
     }
-
 
 </style>
