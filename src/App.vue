@@ -36,9 +36,11 @@
     }
 
     @media screen and (max-width: 700px) {
+
         #app {
             padding: 6.0px 15.0px 20.0px 15.0px;
             box-sizing: border-box;
         }
+
     }
 </style>

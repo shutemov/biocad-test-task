@@ -145,19 +145,18 @@
     @media screen and (max-width: 700px) {
 
         /*  Analog line-height  */
+
         .device-info__item {
-            /*form*/
             margin-top: 6px;
         }
 
         .device-info__item:first-child {
-            /*form*/
             margin-top: 0px;
         }
 
         /*  ------------------  */
+
         .device-info {
-            /*form*/
             width: 100%;
             height: auto;
         }

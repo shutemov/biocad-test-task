@@ -11,6 +11,7 @@
 
             <!--   LEFT SIDE   -->
             <div class="left-side">
+
                 <div class="left-side__content">
 
                     <!--  UNIT NAME  -->
@@ -137,38 +138,32 @@
     /*margin of global elements*/
 
     .body {
-        /*form*/
         margin-top: 20px;
     }
 
     .footer-block {
-        /*form*/
         margin-top: 50px;
     }
 
     /*---*/
 
     .body {
-        /*form*/
         display: flex;
         flex-direction: row;
         width: 100%;
     }
 
     .left-side {
-        /*form*/
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
     .right-side {
-        /*form*/
         margin-left: 30px;
     }
 
     .left-side__report-filter {
-        /*form*/
         margin-top: 30px;
     }
 
@@ -214,7 +209,7 @@
         }
 
         .right-side {
-            margin-left: 0px;
+            margin-left: 0;
         }
 
         .footer-block {

@@ -36,7 +36,7 @@
             search(deviceId) {
 
                 if (!deviceId) {
-                    alert('You did not enter device ID')
+                    alert('You have not entered the device ID')
                     return
                 }
 
@@ -45,28 +45,17 @@
                 this.deviceId = ""
             }
         }
-
     }
 </script>
 
 <style scoped>
 
     .filter-devices {
-        /*form*/
         width: 320px;
         height: 90px;
     }
 
-    .filter-devices__header{
-
-    }
-
-    .filter-devices__body{
-
-    }
-
     .filter-devices__search {
-        /*form*/
         margin-top: 16px;
     }
 
@@ -122,6 +111,7 @@
     }
 
     @media screen and (max-width: 700px) {
+
         .filter-devices {
             width: 100%;
         }

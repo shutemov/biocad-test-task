@@ -4,8 +4,8 @@
         <div class="report-filter__item">
             <select class="select">
                 <option>1 day</option>
-                <option selected>1 mounth</option>
-                <option>6 mounth</option>
+                <option selected>1 month</option>
+                <option>6 month</option>
                 <option>1 year</option>
             </select>
         </div>
@@ -25,12 +25,12 @@
                 </div>
 
                 <div class="check-radio-area__item">
-                    <input  type="radio"
-                            name="reportTypeRadio"
-                            value="Measuring"
-                            v-model="reportType"
-                            @change="setReportType"
-                            id="measuringRadio">
+                    <input type="radio"
+                           name="reportTypeRadio"
+                           value="Measuring"
+                           v-model="reportType"
+                           @change="setReportType"
+                           id="measuringRadio">
                     <label for="measuringRadio">Measuring</label>
                 </div>
 
@@ -103,7 +103,6 @@
     }
 
     .check-radio-area > div {
-        /*form*/
         margin-top: 10px;
     }
 
@@ -176,36 +175,29 @@
 
     @media screen and (max-width: 700px) {
         .select {
-            /*form*/
             width: 100%;
         }
 
         @supports (-webkit-appearance: none) or (-moz-appearance: none) {
             input[type="radio"] {
-                /*form*/
                 width: 30px;
                 height: 30px;
             }
 
             input[type="radio"]:after {
-                /*form*/
                 width: 26px;
                 height: 26px;
             }
 
 
             input[type="radio"] + label {
-                /*form*/
                 margin-left: 4px;
                 margin-top: 5px;
                 height: 26px;
-                /*font*/
                 font-size: 18px;
                 width: 80%;
             }
         }
-
-
     }
 
 

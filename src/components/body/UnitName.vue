@@ -79,7 +79,6 @@
 <style scoped>
 
     .unit-name {
-        /*form*/
         display: flex;
         position: relative;
         flex-direction: row;
@@ -120,28 +119,23 @@
     }
 
     @media screen and (max-width: 700px) {
-        .unit-name {
 
+        .unit-name {
             width: 100%;
             justify-content: space-around;
         }
 
         .info {
-            /*form*/
             position: relative;
             margin-right: 10px;
-
-            /*font*/
             font-size: 25px;
         }
 
         .title {
-            /*font*/
             text-align: center;
         }
 
         .logo {
-            /*form*/
             margin-left: 10px;
         }
     }

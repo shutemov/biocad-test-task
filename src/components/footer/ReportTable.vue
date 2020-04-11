@@ -135,7 +135,6 @@
         text-align: left;
     }
 
-
     .report {
         padding: 39px 40px 60px 40px;
         background: #FFFFFF;
