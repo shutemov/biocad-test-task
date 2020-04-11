@@ -2,22 +2,22 @@
     <div class="report">
 
         <!--  TABLE  -->
-        <table class="report__table">
+        <table class="table">
 
             <!--  CAPTION  -->
-            <caption class="report-table__caption">
+            <caption class="table__caption">
                 <b>{{title}}</b>
             </caption>
 
 
             <!--  TABLE HEAD  -->
-            <thead class="report__thead">
+            <thead class="table__thead">
                 <calibration-report-table-head :t-head-data="this.tHead"/>
             </thead>
 
 
             <!--   TABLE BODY  -->
-            <tbody class="report__tbody">
+            <tbody class="table__tbody">
 
                 <calibration-report-table-body-item
                         v-for="data in this.tBody"
@@ -122,40 +122,21 @@
 
 <style>
 
-    caption {
-        /*font*/
+    .table__caption{
         text-align: left;
         font-size: 16px;
         line-height: 19px;
         margin-bottom: 25px;
     }
 
-    table {
+    .table {
         border-collapse: collapse;
         width: 100%;
         text-align: left;
     }
 
-    /*tr classes*/
-
-    .report-header-item {
-        vertical-align: top;
-        font-size: 13px;
-    }
-
-    .report-body-item {
-        border-bottom: 1px solid #E9E9E9;
-        vertical-align: top;
-    }
-
-    .report-body-item:last-child {
-        border-bottom: none;
-    }
-
-    /*---*/
 
     .report {
-        /*form*/
         padding: 39px 40px 60px 40px;
         background: #FFFFFF;
         border: 1px dashed #939DA6;
@@ -165,17 +146,8 @@
 
     @media screen and (max-width: 700px) {
         .report {
-            /*form*/
             padding: 19.5px 20px 30px 20px;
-            overflow: scroll;
-        }
-
-        table {
-            /*form*/
-            border-collapse: collapse;
             width: 900px;
-            /*font*/
-            text-align: left;
         }
     }
 

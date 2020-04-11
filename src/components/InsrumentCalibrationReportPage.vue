@@ -1,5 +1,6 @@
 <template>
     <div class="main-container">
+
         <!--  HEAD BLOCK  -->
         <div class="head">
             <filter-devices></filter-devices>
@@ -7,25 +8,30 @@
 
         <!--  BODY  BLOCK   -->
         <div class="body">
+
             <!--   LEFT SIDE   -->
-            <div class="left-side ">
+            <div class="left-side">
                 <div class="left-side__content">
+
                     <!--  UNIT NAME  -->
-                    <unit-name :title="this.unitName"></unit-name>
+                    <unit-name :unit-name-data="this.unitName"/>
 
                     <!--  REPORT FILTER  -->
-                    <report-filters class="report-filter"></report-filters>
+                    <div class="left-side__report-filter">
+                        <report-filters/>
+                    </div>
+
                 </div>
 
                 <!--  GENERATE REPORT BUTTON  -->
                 <button class="generate-button" @click="generate">
-                    Generate report
+                    <span class="generate-button__text">Generate report</span>
                 </button>
             </div>
 
             <!--  RIGHT SIDE  -->
             <div class="right-side">
-                <device-info class="device-info" :device="getDevice"></device-info>
+                <device-info :device="getDevice"></device-info>
             </div>
         </div>
 
@@ -69,7 +75,7 @@
                     bodyReportTableData: []
                 },
 
-                unitName: undefined
+                unitName: undefined,
             };
         },
 
@@ -130,7 +136,7 @@
 
     /*margin of global elements*/
 
-    .body{
+    .body {
         /*form*/
         margin-top: 20px;
     }
@@ -141,12 +147,6 @@
     }
 
     /*---*/
-
-    .head {
-        /*form*/
-        width: 390px;
-        height: 90px;
-    }
 
     .body {
         /*form*/
@@ -167,7 +167,7 @@
         margin-left: 30px;
     }
 
-    .report-filter {
+    .left-side__report-filter {
         /*form*/
         margin-top: 30px;
     }
@@ -179,7 +179,7 @@
         background: #4990e2;
         border-radius: 3px;
         border: none;
-        margin-top:50px;
+        margin-top: 50px;
 
         /*font*/
         color: white;
@@ -191,45 +191,38 @@
         font-feature-settings: "pnum" on, "lnum" on;
     }
 
-    .device-info {
-        /*form*/
-        padding: 20px 18px 20px 18px;
-    }
 
-
-    @media (max-width: 700px) {
+    @media screen and (max-width: 700px) {
         .main-container {
-            /*form*/
-            /*box-sizing: border-box;*/
             width: 100%;
             padding: 0px;
         }
 
         .head {
-            /*form*/
             margin-top: 30px;
             width: 100%;
         }
 
         .body {
-            /*form*/
             display: flex;
             flex-direction: column-reverse;
             width: 100%;
         }
 
         .left-side {
-            /*form*/
             margin-top: 30px;
         }
 
         .right-side {
-            /*form*/
             margin-left: 0px;
         }
 
+        .footer-block {
+            width: 100%;
+            overflow: scroll;
+        }
+
         .generate-button {
-            /*form*/
             width: 100%;
             margin-top: 30px;
             font-size: 17px;
@@ -237,4 +230,3 @@
         }
     }
 </style>
-<!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,49 +1,51 @@
 <template>
     <div class="report-filter">
 
-        <select class="report-filter__select">
-            <option>1 day</option>
-            <option selected>1 mounth</option>
-            <option>6 mounth</option>
-            <option>1 year</option>
-        </select>
+        <div class="report-filter__item">
+            <select class="select">
+                <option>1 day</option>
+                <option selected>1 mounth</option>
+                <option>6 mounth</option>
+                <option>1 year</option>
+            </select>
+        </div>
 
 
-        <div class="report-filter__checkradio" style="display: flex;flex-direction: column;margin-top: 10px;">
+        <div class="report-filter__item">
+            <div class="check-radio-area">
+                <div class="check-radio-area__item">
+                    <input type="radio"
+                           name="reportTypeRadio"
+                           value="Calibration"
+                           checked
+                           v-model="reportType"
+                           @change="setReportType"
+                           id="calibrationRadio">
+                    <label for="calibrationRadio">Calibration</label>
+                </div>
 
-            <div>
-                <input id="calibrationRadio"
-                       type="radio"
-                       name="reportTypeRadio"
-                       value="Calibration"
-                       checked
-                       v-model="reportType"
-                       @change="setReportType">
-                <label for="calibrationRadio">Calibration</label>
-            </div>
+                <div class="check-radio-area__item">
+                    <input  type="radio"
+                            name="reportTypeRadio"
+                            value="Measuring"
+                            v-model="reportType"
+                            @change="setReportType"
+                            id="measuringRadio">
+                    <label for="measuringRadio">Measuring</label>
+                </div>
 
-            <div>
-                <input
-                       id="measuringRadio"
-                       type="radio"
-                       name="reportTypeRadio"
-                       value="Measuring"
-                       v-model="reportType"
-                       @change="setReportType">
-                <label for="measuringRadio">Measuring</label>
-            </div>
-
-            <div>
-                <input
-                       id="usingRadio"
-                       type="radio"
-                       name="reportTypeRadio"
-                       value="Using"
-                       v-model="reportType"
-                       @change="setReportType">
-                <label for="usingRadio">Using</label>
+                <div class="check-radio-area__item">
+                    <input type="radio"
+                           name="reportTypeRadio"
+                           value="Using"
+                           v-model="reportType"
+                           @change="setReportType"
+                           id="usingRadio">
+                    <label for="usingRadio">Using</label>
+                </div>
             </div>
         </div>
+
     </div>
 
 </template>
@@ -75,7 +77,7 @@
 </script>
 
 <style scoped>
-    .report-filter__select {
+    .select {
         /*form*/
         width: 220px;
         height: 30px;
@@ -94,7 +96,13 @@
         color: #353535;
     }
 
-    .report-filter__checkradio > div {
+    .check-radio-area {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .check-radio-area > div {
         /*form*/
         margin-top: 10px;
     }
@@ -142,10 +150,9 @@
         }
 
         input[type='radio']:checked {
-            --o:1;
+            --o: 1;
             --s: .5;
         }
-
 
 
         input[type="radio"] + label {
@@ -167,8 +174,8 @@
     }
 
 
-    @media (max-width: 700px) {
-        .report-filter__select {
+    @media screen and (max-width: 700px) {
+        .select {
             /*form*/
             width: 100%;
         }

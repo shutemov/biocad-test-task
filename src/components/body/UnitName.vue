@@ -1,7 +1,12 @@
 <template>
     <div class="unit-name">
 
-        <svg class="logo" width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="logo"
+             width="50"
+             height="50"
+             viewBox="0 0 40 40"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
                 <path d="M22.3506 10.0006C21.8935 10.0006 21.5228 9.62745 21.5228 9.16724V5.83414C21.5228 5.37393 21.8935 5.00082 22.3506 5.00082C22.8078 5.00082 23.1784 5.37393 23.1784 5.83414V9.16732C23.1783 9.62745 22.8078 10.0006 22.3506 10.0006Z"
                       fill="#FFA000"/>
@@ -36,16 +41,16 @@
         </svg>
 
 
-        <div class="device-title">
-            <span class="device-title__device-title">{{this.unitNameData.title}}</span>
+        <div class="title">
+            <span class="title__text-type">{{this.unitNameData.title}}</span>
             <br>
-            <span class="device-title__device-model">{{this.unitNameData.model}}</span>
+            <span class="title__text-model">{{this.unitNameData.model}}</span>
             <br>
-            <span class="device-title__device-code">{{this.unitNameData.deviceCode}}</span>
+            <span class="title__text-code">{{this.unitNameData.deviceCode}}</span>
         </div>
 
 
-        <span class="info-tooltip">
+        <span class="info">
                 <i class="fas fa-info-circle"></i>
         </span>
     </div>
@@ -67,14 +72,6 @@
                     }
                 }
             },
-
-            tooltipData: {
-                type: String,
-                default: function () {
-                    return 'You can copy the blue code of the device just by clicking on it!'
-                }
-            },
-
         }
     }
 </script>
@@ -90,7 +87,7 @@
         height: 80px;
     }
 
-    .device-title {
+    .title {
         /*form*/
         margin-left: 20px;
         width: 100%;
@@ -107,7 +104,7 @@
         font-feature-settings: 'pnum' on, 'lnum' on;
     }
 
-    .device-title__device-code {
+    .title__text-code {
         letter-spacing: 2.5px;
     }
 
@@ -115,21 +112,21 @@
         margin-left: 0px;
     }
 
-    .info-tooltip {
+    .info {
         position: absolute;
         right: 0px;
         font-size: 22px;
         color: #535353;
     }
 
-    @media (max-width: 700px) {
+    @media screen and (max-width: 700px) {
         .unit-name {
 
             width: 100%;
             justify-content: space-around;
         }
 
-        .info-tooltip {
+        .info {
             /*form*/
             position: relative;
             margin-right: 10px;
@@ -138,7 +135,7 @@
             font-size: 25px;
         }
 
-        .device-title {
+        .title {
             /*font*/
             text-align: center;
         }

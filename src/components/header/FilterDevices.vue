@@ -1,15 +1,17 @@
 <template>
     <div class="filter-devices">
-        <div class="filter-devices__title">
-            <span class="filter-devices__text">Enter inventory number, guid or bims id</span>
-        </div>
 
-        <div class="filter-devices__search">
+            <div class="filter-devices__title">
+                <span class="filter-devices__text">Enter inventory number, guid or bims id</span>
+            </div>
 
-            <input class="filter-devices__input" type="text" placeholder="A-OO1234" v-model="deviceId">
+            <div class="filter-devices__search">
+                <input class="filter-devices__input" type="text" placeholder="A-OO1234" v-model="deviceId">
+                <button class="filter-devices__button" @click="search(deviceId)">
+                    Search
+                </button>
+            </div>
 
-            <button class="filter-devices__button" @click="search(deviceId)">Search</button>
-        </div>
     </div>
 </template>
 
@@ -53,6 +55,14 @@
         /*form*/
         width: 320px;
         height: 90px;
+    }
+
+    .filter-devices__header{
+
+    }
+
+    .filter-devices__body{
+
     }
 
     .filter-devices__search {
@@ -111,7 +121,7 @@
         color: #8C8C8C;
     }
 
-    @media (max-width: 700px) {
+    @media screen and (max-width: 700px) {
         .filter-devices {
             width: 100%;
         }

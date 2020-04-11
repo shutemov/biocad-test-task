@@ -1,20 +1,19 @@
 <template>
     <div class="device-info">
-        <div class="infoItem"
+        <div class="device-info__item"
              v-for="itemInfo in updateInfo"
              :key="itemInfo.id">
 
 
             <!--  display the property of the item  -->
-            <span class="deviceProp" style="color:gray">{{itemInfo.deviceProperty}}</span>:
+            <span class="device-info__property" style="color:gray">{{itemInfo.deviceProperty}}</span>:
 
             <!--  if itemInfo has property "isCopied" then add clickListener and styles  -->
-            <b v-if="itemInfo.isCopied"
-               class="propValue"
+            <b v-if="itemInfo.isCopied" class="device-info__property-value_is-copied"
                @click="copy(itemInfo.value)"
                style="color:#5f9de4;">{{itemInfo.value}}</b>
 
-            <b v-else class="propValue">{{itemInfo.value}}</b>
+            <b v-else class="device-info__property-value">{{itemInfo.value}}</b>
 
         </div>
     </div>
@@ -99,14 +98,15 @@
 <style scoped>
 
     /*Analog line-height*/
-    .infoItem {
+
+    .device-info__item {
         /*form*/
         margin-top: 5px;
         letter-spacing: 0.25px;
         text-align: left;
     }
 
-    .infoItem:first-child {
+    .device-info__item:first-child {
         /*form*/
         margin-top: 0px;
     }
@@ -128,35 +128,38 @@
         line-height: 17px;
     }
 
-    .deviceProp {
+    .device-info__property {
         color: #8c8c8c;
         font-weight: lighter;
         letter-spacing: 0.2px;
     }
 
-    .propValue {
+    .device-info__property-value {
         color: #444651;
     }
 
-    @media (max-width: 700px) {
+    .device-info__property-value_is-copied {
+        color: #5f9de4;
+    }
 
-        /*Analog line-height*/
-        .infoItem {
+    @media screen and (max-width: 700px) {
+
+        /*  Analog line-height  */
+        .device-info__item {
             /*form*/
             margin-top: 6px;
         }
 
-        .infoItem:first-child {
+        .device-info__item:first-child {
             /*form*/
             margin-top: 0px;
         }
 
-        /*------------------*/
+        /*  ------------------  */
         .device-info {
             /*form*/
             width: 100%;
             height: auto;
         }
-
     }
 </style>

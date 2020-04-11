@@ -1,10 +1,8 @@
 <template>
     <tr class="report-header-item">
 
-        <th class="report-header-item__content"
-            v-for="th in this.tHeadData"
-            :key="th.id"
-            v-html="th">
+        <th class="report-header-item__th" v-for="th in this.tHeadData" :key="th.id">
+            <div class="report-header-item__cell-text" v-html="th"></div>
         </th>
 
     </tr>
@@ -34,10 +32,11 @@
 
 <style scoped>
 
-
-    .report-header-item__content {
-        /*font*/
+    .report-header-item__th {
         color: #939DA6;
         font-weight: normal;
+        vertical-align: top;
+        font-size: 13px;
     }
+
 </style>
