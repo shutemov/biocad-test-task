@@ -45,7 +45,7 @@ const state = {
 
         headReportTableData: [
             'Data',
-            'Used Buffer Solutions',
+            'Used buffer solutions',
             'Slope, % <br> Norm 95-105',
             'Offset, mV <br> Norm ± (0-20)',
             'User',
