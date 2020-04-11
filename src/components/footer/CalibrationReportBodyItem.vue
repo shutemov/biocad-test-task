@@ -16,32 +16,31 @@
 
 
         <!--  Slope -->
-        <td>
-            <div class="report-body-item__slope-cell">
+        <td class="report-body-item__slope-cell">
+            <!--            <div class="report-body-item__slope-cell">-->
 
-                <div class="report-body-item__slope-cell__text">{{data.slope}}</div>
+            <div class="report-body-item__text">{{data.slope}}</div>
 
-                <span v-if="getSlopeState"
-                      class="report-body-item__slope-cell__positive-icon">
+            <span v-if="getSlopeState" class="report-body-item__icon positive-icon">
                     <i class="fas fa-check-circle "></i>
-                </span>
-                <span v-else
-                      class="report-body-item__slope-cell__negative-icon">
+            </span>
+            <span v-else
+                  class="report-body-item__icon negative-icon">
                     <i class="fas fa-times-circle"></i>
-                </span>
-            </div>
+            </span>
+            <!--            </div>-->
         </td>
 
 
         <!--   Offset   -->
         <td>
             <div class="report-body-item__offset-cell">
-                <div class="report-body-item__offset-cell__text">{{data.offset}}</div>
+                <div class="report-body-item__text ">{{data.offset}}</div>
 
-                <span v-if="getOffsetState" style="color:  #6BAE45;font-size: 16px;">
+                <span v-if="getOffsetState" class="positive-icon">
                     <i class="fas fa-check-circle "></i>
                 </span>
-                <span v-else style="color: #D10000;font-size: 16px;">
+                <span v-else class="negative-icon">
                     <i class="fas fa-times-circle"></i>
                 </span>
             </div>
@@ -111,6 +110,16 @@
 
 <style scoped>
 
+    .positive-icon {
+        color: #6BAE45;
+        font-size: 16px;
+    }
+
+    .negative-icon {
+        color: #D10000;
+        font-size: 16px;
+    }
+
 
     td, th {
         /*form*/
@@ -164,22 +173,18 @@
         letter-spacing: 0.3px;
     }
 
-    .report-body-item__slope-cell__text,
-    .report-body-item__offset-cell__text {
+    .report-body-item__text,
+    .report-body-item__text {
         /*form*/
         width: 50px;
     }
 
 
-    .report-body-item__slope-cell__positive-icon {
-        /*font*/
-        color: #6BAE45;
-        font-size: 16px;
+    .report-body-item__icon {
+
     }
 
-    .report-body-item__slope-cell__negative-icon {
-        /*font*/
-        color: #D10000;
-        font-size: 16px;
+    .report-body-item__icon {
+
     }
 </style>
