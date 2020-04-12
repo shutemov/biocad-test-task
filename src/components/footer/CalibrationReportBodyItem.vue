@@ -123,14 +123,14 @@
 
             //SLOPE VALIDATOR
             getSlopeState() {
-                let slope = this.data.slope
+                let slope = this.slope
                 return slope <= 100 && slope >= 95;
             },
 
 
             //OFFSET VALIDATOR
             getOffsetState() {
-                let offset = this.data.offset
+                let offset = this.offset
                 return offset >= -20 && offset <= 20;
             }
         }
