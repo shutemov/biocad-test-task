@@ -124,7 +124,7 @@ const state = {
     unitName: {
         title: 'Аналитические весы',
         model: 'OHAUS Adventurer',
-        deviceCode:'АХ324 (B715976163)'
+        deviceCode: 'АХ324 (B715976163)'
     },
 
     // Value is assigned by mutation [SET_FOUND_DEVICE]
