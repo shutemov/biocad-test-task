@@ -1,5 +1,9 @@
 # instrument-calibration-report-page
+Тестовое задание фронтенд стажеру biocad 2020 г. 
 
+Ссылка на рабочий макет: [shutemov.github.io/biocad-test-task/](https://shutemov.github.io/biocad-test-task/)
+
+---
 ## Project setup
 ```
 npm install
