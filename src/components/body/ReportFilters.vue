@@ -85,6 +85,7 @@
         border: 1px solid #E9E9E9;
         box-sizing: border-box;
         padding-left: 10px;
+        cursor: pointer;
 
         /*font*/
         font-style: normal;

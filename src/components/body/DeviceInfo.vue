@@ -1,17 +1,13 @@
 <template>
     <div class="device-info">
-        <div class="device-info__item"
-             v-for="itemInfo in updateInfo"
-             :key="itemInfo.id">
+        <div class="device-info__item" v-for="itemInfo in updateInfo" :key="itemInfo.id">
 
+            <span class="device-info__property">{{itemInfo.deviceProperty}}</span>:
 
-            <!--  display the property of the item  -->
-            <span class="device-info__property" style="color:gray">{{itemInfo.deviceProperty}}</span>:
-
-            <!--  if itemInfo has property "isCopied" then add clickListener and styles  -->
-            <b v-if="itemInfo.isCopied" class="device-info__property-value_is-copied"
+            <b v-if="itemInfo.isCopied"
+               class="device-info__property-value_is-copied"
                @click="copy(itemInfo.value)"
-               style="color:#5f9de4;">{{itemInfo.value}}</b>
+            >{{itemInfo.value}}</b>
 
             <b v-else class="device-info__property-value">{{itemInfo.value}}</b>
 
@@ -139,13 +135,13 @@
     }
 
     .device-info__property-value_is-copied {
+        cursor: pointer;
         color: #5f9de4;
     }
 
     @media screen and (max-width: 700px) {
 
         /*  Analog line-height  */
-
         .device-info__item {
             margin-top: 6px;
         }
@@ -155,7 +151,6 @@
         }
 
         /*  ------------------  */
-
         .device-info {
             width: 100%;
             height: auto;

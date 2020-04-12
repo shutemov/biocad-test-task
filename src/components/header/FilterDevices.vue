@@ -83,6 +83,7 @@
         background: #353535;
         border: none;
         margin-left: 20px;
+        cursor: pointer;
 
         /*font*/
         font-style: normal;
@@ -97,7 +98,6 @@
     }
 
     .filter-devices__text {
-        /*form*/
         height: 24px;
 
         /*font*/

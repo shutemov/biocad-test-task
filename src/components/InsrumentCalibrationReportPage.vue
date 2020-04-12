@@ -175,6 +175,7 @@
         border-radius: 3px;
         border: none;
         margin-top: 50px;
+        cursor: pointer;
 
         /*font*/
         color: white;
