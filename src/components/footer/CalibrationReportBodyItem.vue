@@ -4,9 +4,9 @@
         <!--  Date  -->
         <th class="report-body-item__th">
             <span class="date-cell">
-                   {{data.when.date}}
+                   {{when.date}}
                     <br>
-                   {{data.when.time}}
+                   {{when.time}}
             </span>
         </th>
 
@@ -14,7 +14,9 @@
         <!--   Used buffer solution   -->
         <td class="report-body-item__td">
             <div class="used-buffer-solution-cell">
-                <span class="used-buffer-solution-cell__text" v-for="item in data.usedBufferSolution" :key="item.id">{{item}}<br></span>
+                <span class="used-buffer-solution-cell__text" v-for="item in usedBufferSolution" :key="item.id">
+                    {{item}}<br>
+                </span>
             </div>
         </td>
 
@@ -23,7 +25,7 @@
         <td class="report-body-item__td">
             <div class="slope-cell">
 
-                <div class="report-body-item__text">{{data.slope}}</div>
+                <div class="report-body-item__text">{{slope}}</div>
 
                 <span v-if="getSlopeState" class="report-body-item__icon positive-icon">
                     <i class="fas fa-check-circle "></i>
@@ -39,7 +41,7 @@
         <!--   Offset   -->
         <td class="report-body-item__td">
             <div class="offset-cell">
-                <div class="report-body-item__text ">{{data.offset}}</div>
+                <div class="report-body-item__text ">{{offset}}</div>
 
                 <span v-if="getOffsetState" class="positive-icon">
                     <i class="fas fa-check-circle "></i>
@@ -53,7 +55,7 @@
 
         <!--        User        -->
         <td class="report-body-item__td">
-            <span class="user-cell">{{data.user}}</span>
+            <span class="user-cell">{{user}}</span>
         </td>
 
     </tr>
@@ -66,26 +68,48 @@
 
         props: {
 
-            data: {
+            when: {
                 type: Object,
                 default: function () {
                     return {
-                        when: {
-                            date: '04.10.19',
-                            time: '10:23'
-                        },
-                        usedBufferSolution: [
-                            'В1: № 2000460789536: pH 1.09',
-                            'В2: № 2000460789536: pH 2.00',
-                            'В3: № 2000460789536: pH 4.01',
-                            'В4: № 2000460789536: pH 7.00',
-                            'В5: № 2000460789536: pH 9.21',
-                        ],
-                        slope: 98.1,
-                        offset: -0.3,
-                        user: 'Петров Иван Геннадьевич'
+                        date: '04.10.19',
+                        time: '10:23'
                     }
-                },
+                }
+            },
+
+            usedBufferSolution: {
+                type: Array,
+                default: function () {
+                    return [
+                        'В1: № 2000460789536: pH 1.09',
+                        'В2: № 2000460789536: pH 2.00',
+                        'В3: № 2000460789536: pH 4.01',
+                        'В4: № 2000460789536: pH 7.00',
+                        'В5: № 2000460789536: pH 9.21',
+                    ]
+                }
+            },
+
+            slope: {
+                type: Number,
+                default: function () {
+                    return 98.1
+                }
+            },
+
+            offset: {
+                type: Number,
+                default: function () {
+                    return 0.3
+                }
+            },
+
+            user: {
+                type: String,
+                default: function () {
+                    return 'Username'
+                }
             }
 
         },

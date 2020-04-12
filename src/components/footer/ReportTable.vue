@@ -12,17 +12,21 @@
 
             <!--  TABLE HEAD  -->
             <thead class="table__thead">
-                <calibration-report-table-head :t-head-data="this.tHead"/>
+            <calibration-report-table-head :t-head-data="this.tHead"/>
             </thead>
 
 
             <!--   TABLE BODY  -->
             <tbody class="table__tbody">
 
-                <calibration-report-table-body-item
-                        v-for="data in this.tBody"
-                        :data="data"
-                        :key="data.id"/>
+            <calibration-report-table-body-item
+                    v-for="data in this.tBody"
+                    :when="data.when"
+                    :used-buffer-solution="data.usedBufferSolution"
+                    :slope="data.slope"
+                    :offset="data.offset"
+                    :user="data.user"
+                    :key="data.id"/>
 
             </tbody>
         </table>
@@ -122,7 +126,7 @@
 
 <style>
 
-    .table__caption{
+    .table__caption {
         text-align: left;
         font-size: 16px;
         line-height: 19px;
